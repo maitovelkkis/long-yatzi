@@ -20,18 +20,17 @@ namespace LongYatzi
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            dice.Initialize();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             dice.ThrowDice();
-            throw1.Enabled = false;
-            die1.Text = dice.ReadDice()[0].ToString();
-            die2.Text = dice.ReadDice()[1].ToString();
-            die3.Text = dice.ReadDice()[2].ToString();
-            die4.Text = dice.ReadDice()[3].ToString();
-            die5.Text = dice.ReadDice()[4].ToString();
+            die1.Text = dice.ReadDice()[0].EyeCount.ToString();
+            die2.Text = dice.ReadDice()[1].EyeCount.ToString();
+            die3.Text = dice.ReadDice()[2].EyeCount.ToString();
+            die4.Text = dice.ReadDice()[3].EyeCount.ToString();
+            die5.Text = dice.ReadDice()[4].EyeCount.ToString();
         }
 
         private void die1_Click(object sender, EventArgs e)

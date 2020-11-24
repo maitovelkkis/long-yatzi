@@ -9,19 +9,33 @@ namespace LongYatzi
     class Dice
     {
         private int _diceAmount = 5;
-        List<int> _diceList = new List<int>();
+        private int _throw = 0;
+        List<Die> _diceList = new List<Die>();
         public void ThrowDice()
         {
-            _diceList.Clear();
             Random rand = new Random();
-            for (int i = 0; i < _diceAmount; i++)
+            foreach(Die die in _diceList)
             {
-                _diceList.Add(rand.Next(1, 7));
+                if(!die.Held)
+                {
+                    die.EyeCount = rand.Next(1, 7);
+                }
             }
         }
-        public List<int> ReadDice()
+        public List<Die> ReadDice()
         {
             return _diceList;
+        }
+        public int ThrowCount()
+        {
+            return _throw;
+        }
+        public void Initialize()
+        {
+            for(int i = 0; i < _diceAmount;i++)
+            {
+                _diceList.Add(new Die(1));
+            }
         }
     }
 }
