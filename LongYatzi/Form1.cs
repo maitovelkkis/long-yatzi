@@ -26,6 +26,14 @@ namespace LongYatzi
         private void button1_Click(object sender, EventArgs e)
         {
             dice.ResetHeld();
+            if(dice.GetThrow() == 3)
+            {
+                hold1.Checked = false;
+                hold2.Checked = false;
+                hold3.Checked = false;
+                hold4.Checked = false;
+                hold5.Checked = false;
+            }
             if(hold1.Checked)
             {
                 dice.Hold(0);
@@ -52,6 +60,22 @@ namespace LongYatzi
             die3.Text = dice.ReadDice()[2].EyeCount.ToString();
             die4.Text = dice.ReadDice()[3].EyeCount.ToString();
             die5.Text = dice.ReadDice()[4].EyeCount.ToString();
+            throwcount.Text = dice.GetThrow().ToString();
+            ones1.Enabled = true;
+            ones2.Enabled = true;
+
+            if (dice.GetThrow() > 1)
+            {
+                ones1.Enabled = false;
+            }
+            if (dice.GetThrow() > 2)
+            {
+                ones2.Enabled = false;
+            }
+            ones1.Text = dice.ValidateOnes(1).ToString();
+            ones2.Text = dice.ValidateOnes(2).ToString();
+            ones3.Text = dice.ValidateOnes(3).ToString();
         }
+
     }
 }
