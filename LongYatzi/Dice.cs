@@ -8,17 +8,20 @@ namespace LongYatzi
 {
     class Dice
     {
-        private int _diceAmount = 6;
-        public List<int> ThrowDice()
+        private int _diceAmount = 5;
+        List<int> _diceList = new List<int>();
+        public void ThrowDice()
         {
-            List<int> _diceList = new List<int>();
+            _diceList.Clear();
             Random rand = new Random();
             for (int i = 0; i < _diceAmount; i++)
             {
-                _diceList.Add(rand.Next(1, 6));
+                _diceList.Add(rand.Next(1, 7));
             }
+        }
+        public List<int> ReadDice()
+        {
             return _diceList;
-
         }
     }
 }
