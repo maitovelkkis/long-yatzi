@@ -25,17 +25,33 @@ namespace LongYatzi
 
         private void button1_Click(object sender, EventArgs e)
         {
+            dice.ResetHeld();
+            if(hold1.Checked)
+            {
+                dice.Hold(0);
+            }
+            if (hold2.Checked)
+            {
+                dice.Hold(1);
+            }
+            if (hold3.Checked)
+            {
+                dice.Hold(2);
+            }
+            if (hold4.Checked)
+            {
+                dice.Hold(3);
+            }
+            if (hold5.Checked)
+            {
+                dice.Hold(4);
+            }
             dice.ThrowDice();
             die1.Text = dice.ReadDice()[0].EyeCount.ToString();
             die2.Text = dice.ReadDice()[1].EyeCount.ToString();
             die3.Text = dice.ReadDice()[2].EyeCount.ToString();
             die4.Text = dice.ReadDice()[3].EyeCount.ToString();
             die5.Text = dice.ReadDice()[4].EyeCount.ToString();
-        }
-
-        private void die1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

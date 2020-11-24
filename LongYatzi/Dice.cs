@@ -37,5 +37,16 @@ namespace LongYatzi
                 _diceList.Add(new Die(1));
             }
         }
+        public void Hold(int die)
+        {
+            _diceList[die].Held = true;
+        }
+        public void ResetHeld()
+        {
+            foreach(Die die in _diceList)
+            {
+                die.Held = false;
+            }
+        }
     }
 }
