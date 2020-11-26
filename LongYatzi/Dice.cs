@@ -65,46 +65,14 @@ namespace LongYatzi
         public int ValidateOnes(int i)//4 for force
         {
             int score = -3;
-            if(i == 1)
+            foreach(Die die in _diceList)
             {
-                if(GetThrow() == 1)
+                if(die.EyeCount == 1)
                 {
-                    foreach(Die die in _diceList)
-                    {
-                        if(die.EyeCount == 1)
-                        {
-                            score++;
-                        }
-                    }
-                    return score;
+                    score++;
                 }
             }
-            else if (i == 2)
-            {
-                if (GetThrow() <= 2)
-                {
-                    foreach (Die die in _diceList)
-                    {
-                        if (die.EyeCount == 1)
-                        {
-                            score++;
-                        }
-                    }
-                    return score;
-                }
-            }
-            else if (i == 3)
-            {
-                foreach (Die die in _diceList)
-                {
-                    if (die.EyeCount == 1)
-                    {
-                        score++;
-                    }
-                }
-                return score;
-            }
-            return 0;
+            return score;
         }
     }
 }

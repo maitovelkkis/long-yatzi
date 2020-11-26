@@ -442,6 +442,7 @@ namespace LongYatzi
             this.ones4.Size = new System.Drawing.Size(31, 23);
             this.ones4.TabIndex = 40;
             this.ones4.UseVisualStyleBackColor = true;
+            this.ones4.Click += new System.EventHandler(this.ones4_Click);
             // 
             // Form1
             // 

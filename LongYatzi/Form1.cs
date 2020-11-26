@@ -25,7 +25,7 @@ namespace LongYatzi
             UpdateScoreBoardButtons();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)//new throw
         {
             dice.ResetHeld();
             if(dice.GetThrow() == 2)
@@ -63,11 +63,11 @@ namespace LongYatzi
             die3.Text = dice.ReadDice()[2].EyeCount.ToString();
             die4.Text = dice.ReadDice()[3].EyeCount.ToString();
             die5.Text = dice.ReadDice()[4].EyeCount.ToString();
-            throwcount.Text = dice.GetThrow().ToString();
             UpdateScoreBoardButtons();
         }
         private void UpdateScoreBoardButtons()
         {
+            throwcount.Text = dice.GetThrow().ToString();
             ones1.Enabled = false;
             ones2.Enabled = false;
             ones3.Enabled = false;
@@ -99,6 +99,14 @@ namespace LongYatzi
                     ones3.Text = dice.ValidateOnes(3).ToString();
                 }
             }
+            if (dice.GetThrow() <= 3 && dice.GetThrow() != 0)
+            {
+                if (string.IsNullOrEmpty(scoreBoard.GetScoreUp(4, 1).ToString()))
+                {
+                    ones4.Enabled = true;
+                    ones4.Text = dice.ValidateOnes(4).ToString();
+                }
+            }
         }
         private void NewTurn()
         {
@@ -120,6 +128,12 @@ namespace LongYatzi
         private void ones3_Click(object sender, EventArgs e)
         {
             scoreBoard.StoreScoreUp(3, 1, dice.ValidateOnes(3));
+            NewTurn();
+        }
+
+        private void ones4_Click(object sender, EventArgs e)
+        {
+            scoreBoard.StoreScoreUp(4, 1, dice.ValidateOnes(4));
             NewTurn();
         }
     }
