@@ -72,9 +72,9 @@ namespace LongYatzi
             ones2.Enabled = false;
             ones3.Enabled = false;
             ones4.Enabled = false;
-            ones1.Text = "";
-            ones2.Text = "";
-            ones3.Text = "";
+            ones1.Text = scoreBoard.GetScoreUp(1, 1).ToString();
+            ones2.Text = scoreBoard.GetScoreUp(2, 1).ToString();
+            ones3.Text = scoreBoard.GetScoreUp(3, 1).ToString();
             if(dice.GetThrow()==1)
             {
                 if (string.IsNullOrEmpty(scoreBoard.GetScoreUp(1, 1).ToString()))
@@ -82,8 +82,6 @@ namespace LongYatzi
                     ones1.Enabled = true;
                     ones1.Text = dice.ValidateOnes(1).ToString();
                 }
-                else
-                    ones1.Text = scoreBoard.GetScoreUp(1, 1).ToString();
             }
             if (dice.GetThrow() <= 2 && dice.GetThrow() != 0)
             {
@@ -92,8 +90,6 @@ namespace LongYatzi
                     ones2.Enabled = true;
                     ones2.Text = dice.ValidateOnes(2).ToString();
                 }
-                else
-                    ones2.Text = scoreBoard.GetScoreUp(2, 1).ToString();
             }
             if (dice.GetThrow() <= 3 && dice.GetThrow() != 0)
             {
@@ -102,8 +98,6 @@ namespace LongYatzi
                     ones3.Enabled = true;
                     ones3.Text = dice.ValidateOnes(3).ToString();
                 }
-                else
-                    ones3.Text = scoreBoard.GetScoreUp(3, 1).ToString();
             }
         }
         private void NewTurn()
@@ -112,10 +106,6 @@ namespace LongYatzi
             dice.ResetHeld();
             throw1.Enabled = true;
             UpdateScoreBoardButtons();
-        }
-        private void NewThrow()
-        {
-
         }
         private void ones1_Click(object sender, EventArgs e)
         {
