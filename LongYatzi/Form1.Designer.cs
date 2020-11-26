@@ -71,6 +71,26 @@ namespace LongYatzi
             this.ones2 = new System.Windows.Forms.Button();
             this.ones3 = new System.Windows.Forms.Button();
             this.ones4 = new System.Windows.Forms.Button();
+            this.twos1 = new System.Windows.Forms.Button();
+            this.twos2 = new System.Windows.Forms.Button();
+            this.twos3 = new System.Windows.Forms.Button();
+            this.twos4 = new System.Windows.Forms.Button();
+            this.threes4 = new System.Windows.Forms.Button();
+            this.threes3 = new System.Windows.Forms.Button();
+            this.threes2 = new System.Windows.Forms.Button();
+            this.threes1 = new System.Windows.Forms.Button();
+            this.fours4 = new System.Windows.Forms.Button();
+            this.fours3 = new System.Windows.Forms.Button();
+            this.fours2 = new System.Windows.Forms.Button();
+            this.fours1 = new System.Windows.Forms.Button();
+            this.fives4 = new System.Windows.Forms.Button();
+            this.fives3 = new System.Windows.Forms.Button();
+            this.fives2 = new System.Windows.Forms.Button();
+            this.fives1 = new System.Windows.Forms.Button();
+            this.sixes4 = new System.Windows.Forms.Button();
+            this.sixes3 = new System.Windows.Forms.Button();
+            this.sixes2 = new System.Windows.Forms.Button();
+            this.sixes1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // throw1
@@ -410,7 +430,7 @@ namespace LongYatzi
             // 
             // ones1
             // 
-            this.ones1.Location = new System.Drawing.Point(116, 139);
+            this.ones1.Location = new System.Drawing.Point(116, 134);
             this.ones1.Name = "ones1";
             this.ones1.Size = new System.Drawing.Size(37, 23);
             this.ones1.TabIndex = 37;
@@ -419,7 +439,7 @@ namespace LongYatzi
             // 
             // ones2
             // 
-            this.ones2.Location = new System.Drawing.Point(173, 139);
+            this.ones2.Location = new System.Drawing.Point(173, 134);
             this.ones2.Name = "ones2";
             this.ones2.Size = new System.Drawing.Size(32, 23);
             this.ones2.TabIndex = 38;
@@ -428,7 +448,7 @@ namespace LongYatzi
             // 
             // ones3
             // 
-            this.ones3.Location = new System.Drawing.Point(223, 139);
+            this.ones3.Location = new System.Drawing.Point(223, 134);
             this.ones3.Name = "ones3";
             this.ones3.Size = new System.Drawing.Size(30, 23);
             this.ones3.TabIndex = 39;
@@ -437,18 +457,202 @@ namespace LongYatzi
             // 
             // ones4
             // 
-            this.ones4.Location = new System.Drawing.Point(292, 139);
+            this.ones4.Location = new System.Drawing.Point(292, 134);
             this.ones4.Name = "ones4";
             this.ones4.Size = new System.Drawing.Size(31, 23);
             this.ones4.TabIndex = 40;
             this.ones4.UseVisualStyleBackColor = true;
             this.ones4.Click += new System.EventHandler(this.ones4_Click);
             // 
+            // twos1
+            // 
+            this.twos1.Location = new System.Drawing.Point(116, 163);
+            this.twos1.Name = "twos1";
+            this.twos1.Size = new System.Drawing.Size(37, 23);
+            this.twos1.TabIndex = 41;
+            this.twos1.UseVisualStyleBackColor = true;
+            this.twos1.Click += new System.EventHandler(this.twos1_Click);
+            // 
+            // twos2
+            // 
+            this.twos2.Location = new System.Drawing.Point(175, 162);
+            this.twos2.Name = "twos2";
+            this.twos2.Size = new System.Drawing.Size(30, 23);
+            this.twos2.TabIndex = 42;
+            this.twos2.UseVisualStyleBackColor = true;
+            this.twos2.Click += new System.EventHandler(this.twos2_Click);
+            // 
+            // twos3
+            // 
+            this.twos3.Location = new System.Drawing.Point(223, 162);
+            this.twos3.Name = "twos3";
+            this.twos3.Size = new System.Drawing.Size(30, 23);
+            this.twos3.TabIndex = 43;
+            this.twos3.UseVisualStyleBackColor = true;
+            this.twos3.Click += new System.EventHandler(this.twos3_Click);
+            // 
+            // twos4
+            // 
+            this.twos4.Location = new System.Drawing.Point(292, 163);
+            this.twos4.Name = "twos4";
+            this.twos4.Size = new System.Drawing.Size(31, 23);
+            this.twos4.TabIndex = 44;
+            this.twos4.UseVisualStyleBackColor = true;
+            this.twos4.Click += new System.EventHandler(this.twos4_Click);
+            // 
+            // threes4
+            // 
+            this.threes4.Location = new System.Drawing.Point(292, 190);
+            this.threes4.Name = "threes4";
+            this.threes4.Size = new System.Drawing.Size(31, 23);
+            this.threes4.TabIndex = 48;
+            this.threes4.UseVisualStyleBackColor = true;
+            // 
+            // threes3
+            // 
+            this.threes3.Location = new System.Drawing.Point(223, 189);
+            this.threes3.Name = "threes3";
+            this.threes3.Size = new System.Drawing.Size(30, 23);
+            this.threes3.TabIndex = 47;
+            this.threes3.UseVisualStyleBackColor = true;
+            // 
+            // threes2
+            // 
+            this.threes2.Location = new System.Drawing.Point(175, 189);
+            this.threes2.Name = "threes2";
+            this.threes2.Size = new System.Drawing.Size(30, 23);
+            this.threes2.TabIndex = 46;
+            this.threes2.UseVisualStyleBackColor = true;
+            // 
+            // threes1
+            // 
+            this.threes1.Location = new System.Drawing.Point(116, 190);
+            this.threes1.Name = "threes1";
+            this.threes1.Size = new System.Drawing.Size(37, 23);
+            this.threes1.TabIndex = 45;
+            this.threes1.UseVisualStyleBackColor = true;
+            // 
+            // fours4
+            // 
+            this.fours4.Location = new System.Drawing.Point(292, 218);
+            this.fours4.Name = "fours4";
+            this.fours4.Size = new System.Drawing.Size(31, 23);
+            this.fours4.TabIndex = 52;
+            this.fours4.UseVisualStyleBackColor = true;
+            // 
+            // fours3
+            // 
+            this.fours3.Location = new System.Drawing.Point(223, 217);
+            this.fours3.Name = "fours3";
+            this.fours3.Size = new System.Drawing.Size(30, 23);
+            this.fours3.TabIndex = 51;
+            this.fours3.UseVisualStyleBackColor = true;
+            // 
+            // fours2
+            // 
+            this.fours2.Location = new System.Drawing.Point(175, 217);
+            this.fours2.Name = "fours2";
+            this.fours2.Size = new System.Drawing.Size(30, 23);
+            this.fours2.TabIndex = 50;
+            this.fours2.UseVisualStyleBackColor = true;
+            // 
+            // fours1
+            // 
+            this.fours1.Location = new System.Drawing.Point(116, 218);
+            this.fours1.Name = "fours1";
+            this.fours1.Size = new System.Drawing.Size(37, 23);
+            this.fours1.TabIndex = 49;
+            this.fours1.UseVisualStyleBackColor = true;
+            // 
+            // fives4
+            // 
+            this.fives4.Location = new System.Drawing.Point(292, 246);
+            this.fives4.Name = "fives4";
+            this.fives4.Size = new System.Drawing.Size(31, 23);
+            this.fives4.TabIndex = 56;
+            this.fives4.UseVisualStyleBackColor = true;
+            // 
+            // fives3
+            // 
+            this.fives3.Location = new System.Drawing.Point(223, 245);
+            this.fives3.Name = "fives3";
+            this.fives3.Size = new System.Drawing.Size(30, 23);
+            this.fives3.TabIndex = 55;
+            this.fives3.UseVisualStyleBackColor = true;
+            // 
+            // fives2
+            // 
+            this.fives2.Location = new System.Drawing.Point(175, 245);
+            this.fives2.Name = "fives2";
+            this.fives2.Size = new System.Drawing.Size(30, 23);
+            this.fives2.TabIndex = 54;
+            this.fives2.UseVisualStyleBackColor = true;
+            // 
+            // fives1
+            // 
+            this.fives1.Location = new System.Drawing.Point(116, 246);
+            this.fives1.Name = "fives1";
+            this.fives1.Size = new System.Drawing.Size(37, 23);
+            this.fives1.TabIndex = 53;
+            this.fives1.UseVisualStyleBackColor = true;
+            // 
+            // sixes4
+            // 
+            this.sixes4.Location = new System.Drawing.Point(292, 279);
+            this.sixes4.Name = "sixes4";
+            this.sixes4.Size = new System.Drawing.Size(31, 23);
+            this.sixes4.TabIndex = 60;
+            this.sixes4.UseVisualStyleBackColor = true;
+            // 
+            // sixes3
+            // 
+            this.sixes3.Location = new System.Drawing.Point(223, 278);
+            this.sixes3.Name = "sixes3";
+            this.sixes3.Size = new System.Drawing.Size(30, 23);
+            this.sixes3.TabIndex = 59;
+            this.sixes3.UseVisualStyleBackColor = true;
+            // 
+            // sixes2
+            // 
+            this.sixes2.Location = new System.Drawing.Point(175, 278);
+            this.sixes2.Name = "sixes2";
+            this.sixes2.Size = new System.Drawing.Size(30, 23);
+            this.sixes2.TabIndex = 58;
+            this.sixes2.UseVisualStyleBackColor = true;
+            // 
+            // sixes1
+            // 
+            this.sixes1.Location = new System.Drawing.Point(116, 279);
+            this.sixes1.Name = "sixes1";
+            this.sixes1.Size = new System.Drawing.Size(37, 23);
+            this.sixes1.TabIndex = 57;
+            this.sixes1.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(395, 657);
+            this.Controls.Add(this.sixes4);
+            this.Controls.Add(this.sixes3);
+            this.Controls.Add(this.sixes2);
+            this.Controls.Add(this.sixes1);
+            this.Controls.Add(this.fives4);
+            this.Controls.Add(this.fives3);
+            this.Controls.Add(this.fives2);
+            this.Controls.Add(this.fives1);
+            this.Controls.Add(this.fours4);
+            this.Controls.Add(this.fours3);
+            this.Controls.Add(this.fours2);
+            this.Controls.Add(this.fours1);
+            this.Controls.Add(this.threes4);
+            this.Controls.Add(this.threes3);
+            this.Controls.Add(this.threes2);
+            this.Controls.Add(this.threes1);
+            this.Controls.Add(this.twos4);
+            this.Controls.Add(this.twos3);
+            this.Controls.Add(this.twos2);
+            this.Controls.Add(this.twos1);
             this.Controls.Add(this.ones4);
             this.Controls.Add(this.ones3);
             this.Controls.Add(this.ones2);
@@ -551,6 +755,26 @@ namespace LongYatzi
         private System.Windows.Forms.Button ones2;
         private System.Windows.Forms.Button ones3;
         private System.Windows.Forms.Button ones4;
+        private System.Windows.Forms.Button twos1;
+        private System.Windows.Forms.Button twos2;
+        private System.Windows.Forms.Button twos3;
+        private System.Windows.Forms.Button twos4;
+        private System.Windows.Forms.Button threes4;
+        private System.Windows.Forms.Button threes3;
+        private System.Windows.Forms.Button threes2;
+        private System.Windows.Forms.Button threes1;
+        private System.Windows.Forms.Button fours4;
+        private System.Windows.Forms.Button fours3;
+        private System.Windows.Forms.Button fours2;
+        private System.Windows.Forms.Button fours1;
+        private System.Windows.Forms.Button fives4;
+        private System.Windows.Forms.Button fives3;
+        private System.Windows.Forms.Button fives2;
+        private System.Windows.Forms.Button fives1;
+        private System.Windows.Forms.Button sixes4;
+        private System.Windows.Forms.Button sixes3;
+        private System.Windows.Forms.Button sixes2;
+        private System.Windows.Forms.Button sixes1;
     }
 }
 

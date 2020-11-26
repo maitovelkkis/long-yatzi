@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LongYatzi
@@ -28,10 +21,6 @@ namespace LongYatzi
         private void button1_Click(object sender, EventArgs e)//new throw
         {
             dice.ResetHeld();
-            if(dice.GetThrow() == 2)
-            {
-                throw1.Enabled = false;
-            }
             if (dice.GetThrow() != 0)
             {
                 if (hold1.Checked)
@@ -56,6 +45,7 @@ namespace LongYatzi
                 }
             }
             dice.ThrowDice();
+            throw1.Enabled = scoreBoard.RoomForThrow(dice.GetThrow());
             UpdateUI();
         }
         private void UpdateUI()
@@ -71,9 +61,18 @@ namespace LongYatzi
             ones2.Enabled = false;
             ones3.Enabled = false;
             ones4.Enabled = false;
+            twos1.Enabled = false;
+            twos2.Enabled = false;
+            twos3.Enabled = false;
+            twos4.Enabled = false;
             ones1.Text = scoreBoard.GetScoreUp(1, 1).ToString();
             ones2.Text = scoreBoard.GetScoreUp(2, 1).ToString();
             ones3.Text = scoreBoard.GetScoreUp(3, 1).ToString();
+            ones4.Text = scoreBoard.GetScoreUp(4, 1).ToString();
+            twos1.Text = scoreBoard.GetScoreUp(1, 2).ToString();
+            twos2.Text = scoreBoard.GetScoreUp(2, 2).ToString();
+            twos3.Text = scoreBoard.GetScoreUp(3, 2).ToString();
+            twos3.Text = scoreBoard.GetScoreUp(4, 2).ToString();
             die1.Visible = true;
             die2.Visible = true;
             die3.Visible = true;
@@ -105,6 +104,11 @@ namespace LongYatzi
                     ones1.Enabled = true;
                     ones1.Text = dice.ValidateOnes(1).ToString();
                 }
+                if (string.IsNullOrEmpty(scoreBoard.GetScoreUp(1, 2).ToString()))
+                {
+                    twos1.Enabled = true;
+                    twos1.Text = dice.ValidateTwos(1).ToString();
+                }
             }
             if (dice.GetThrow() <= 2 && dice.GetThrow() != 0)
             {
@@ -112,6 +116,11 @@ namespace LongYatzi
                 {
                     ones2.Enabled = true;
                     ones2.Text = dice.ValidateOnes(2).ToString();
+                }
+                if (string.IsNullOrEmpty(scoreBoard.GetScoreUp(2, 2).ToString()))
+                {
+                    twos2.Enabled = true;
+                    twos2.Text = dice.ValidateTwos(2).ToString();
                 }
             }
             if (dice.GetThrow() <= 3 && dice.GetThrow() != 0)
@@ -121,10 +130,20 @@ namespace LongYatzi
                     ones3.Enabled = true;
                     ones3.Text = dice.ValidateOnes(3).ToString();
                 }
+                if (string.IsNullOrEmpty(scoreBoard.GetScoreUp(3, 2).ToString()))
+                {
+                    twos3.Enabled = true;
+                    twos3.Text = dice.ValidateTwos(3).ToString();
+                }
                 if (string.IsNullOrEmpty(scoreBoard.GetScoreUp(4, 1).ToString()))
                 {
                     ones4.Enabled = true;
                     ones4.Text = dice.ValidateOnes(4).ToString();
+                }
+                if (string.IsNullOrEmpty(scoreBoard.GetScoreUp(4, 2).ToString()))
+                {
+                    twos4.Enabled = true;
+                    twos4.Text = dice.ValidateTwos(4).ToString();
                 }
             }
         }
@@ -159,6 +178,34 @@ namespace LongYatzi
         private void ones4_Click(object sender, EventArgs e)
         {
             scoreBoard.StoreScoreUp(4, 1, dice.ValidateOnes(4));
+            NewTurn();
+        }
+
+        private void twos1_Click(object sender, EventArgs e)
+        {
+            int _throw = 1;
+            scoreBoard.StoreScoreUp(_throw, 2, dice.ValidateTwos(_throw));
+            NewTurn();
+        }
+
+        private void twos2_Click(object sender, EventArgs e)
+        {
+            int _throw = 2;
+            scoreBoard.StoreScoreUp(_throw, 2, dice.ValidateTwos(_throw));
+            NewTurn();
+        }
+
+        private void twos3_Click(object sender, EventArgs e)
+        {
+            int _throw = 3;
+            scoreBoard.StoreScoreUp(_throw, 2, dice.ValidateTwos(_throw));
+            NewTurn();
+        }
+
+        private void twos4_Click(object sender, EventArgs e)
+        {
+            int _throw = 4;
+            scoreBoard.StoreScoreUp(_throw, 2, dice.ValidateTwos(_throw));
             NewTurn();
         }
     }

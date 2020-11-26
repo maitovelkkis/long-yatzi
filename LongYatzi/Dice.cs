@@ -74,5 +74,18 @@ namespace LongYatzi
             }
             return score;
         }
+
+        internal int ValidateTwos(int i)
+        {
+            int score = -3;
+            foreach (Die die in _diceList)
+            {
+                if (die.EyeCount == 2)
+                {
+                    score++;
+                }
+            }
+            return score*2;
+        }
     }
 }

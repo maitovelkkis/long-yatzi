@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LongYatzi
 {
@@ -50,6 +47,49 @@ namespace LongYatzi
                 _throw--;
                 return upperSection[_throw, _eyecount];
             }
+        }
+        public bool RoomForThrow(int _throw)
+        {
+            if(_throw==0)
+            {
+                return true;
+            }
+            else if(_throw == 1)
+            {
+                for (int i = 0; i < 6; i++)
+                {
+                    if(upperSection[1,i]==null)
+                    {
+                        return true;
+                    }
+                }
+                for (int i = 0; i < 6; i++)
+                {
+                    if (upperSection[2, i] == null)
+                    {
+                        return true;
+                    }
+                }
+                if(forcedColumn.Count<15)
+                {
+                    return true;
+                }
+            }
+            else if (_throw == 2)
+            {
+                for (int i = 0; i < 6; i++)
+                {
+                    if (upperSection[2, i] == null)
+                    {
+                        return true;
+                    }
+                }
+                if (forcedColumn.Count < 15)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }
