@@ -22,7 +22,7 @@ namespace LongYatzi
         private void Form1_Load(object sender, EventArgs e)
         {
             dice.Initialize();
-            UpdateScoreBoardButtons();
+            UpdateUI();
         }
 
         private void button1_Click(object sender, EventArgs e)//new throw
@@ -30,44 +30,43 @@ namespace LongYatzi
             dice.ResetHeld();
             if(dice.GetThrow() == 2)
             {
-                hold1.Checked = false;
-                hold2.Checked = false;
-                hold3.Checked = false;
-                hold4.Checked = false;
-                hold5.Checked = false;
                 throw1.Enabled = false;
             }
-            if(hold1.Checked)
+            if (dice.GetThrow() != 0)
             {
-                dice.Hold(0);
-            }
-            if (hold2.Checked)
-            {
-                dice.Hold(1);
-            }
-            if (hold3.Checked)
-            {
-                dice.Hold(2);
-            }
-            if (hold4.Checked)
-            {
-                dice.Hold(3);
-            }
-            if (hold5.Checked)
-            {
-                dice.Hold(4);
+                if (hold1.Checked)
+                {
+                    dice.Hold(0);
+                }
+                if (hold2.Checked)
+                {
+                    dice.Hold(1);
+                }
+                if (hold3.Checked)
+                {
+                    dice.Hold(2);
+                }
+                if (hold4.Checked)
+                {
+                    dice.Hold(3);
+                }
+                if (hold5.Checked)
+                {
+                    dice.Hold(4);
+                }
             }
             dice.ThrowDice();
+            UpdateUI();
+        }
+        private void UpdateUI()
+        {
+            throwcount.Text = dice.GetThrow().ToString();
             die1.Text = dice.ReadDice()[0].EyeCount.ToString();
             die2.Text = dice.ReadDice()[1].EyeCount.ToString();
             die3.Text = dice.ReadDice()[2].EyeCount.ToString();
             die4.Text = dice.ReadDice()[3].EyeCount.ToString();
             die5.Text = dice.ReadDice()[4].EyeCount.ToString();
-            UpdateScoreBoardButtons();
-        }
-        private void UpdateScoreBoardButtons()
-        {
-            throwcount.Text = dice.GetThrow().ToString();
+
             ones1.Enabled = false;
             ones2.Enabled = false;
             ones3.Enabled = false;
@@ -75,6 +74,30 @@ namespace LongYatzi
             ones1.Text = scoreBoard.GetScoreUp(1, 1).ToString();
             ones2.Text = scoreBoard.GetScoreUp(2, 1).ToString();
             ones3.Text = scoreBoard.GetScoreUp(3, 1).ToString();
+            die1.Visible = true;
+            die2.Visible = true;
+            die3.Visible = true;
+            die4.Visible = true;
+            die5.Visible = true;
+            hold1.Visible = true;
+            hold2.Visible = true;
+            hold3.Visible = true;
+            hold4.Visible = true;
+            hold5.Visible = true;
+            if (dice.GetThrow()==0)
+            {
+                die1.Visible = false;
+                die2.Visible = false;
+                die3.Visible = false;
+                die4.Visible = false;
+                die5.Visible = false;
+                hold1.Visible = false;
+                hold2.Visible = false;
+                hold3.Visible = false;
+                hold4.Visible = false;
+                hold5.Visible = false;
+            }
+            else
             if(dice.GetThrow()==1)
             {
                 if (string.IsNullOrEmpty(scoreBoard.GetScoreUp(1, 1).ToString()))
@@ -98,9 +121,6 @@ namespace LongYatzi
                     ones3.Enabled = true;
                     ones3.Text = dice.ValidateOnes(3).ToString();
                 }
-            }
-            if (dice.GetThrow() <= 3 && dice.GetThrow() != 0)
-            {
                 if (string.IsNullOrEmpty(scoreBoard.GetScoreUp(4, 1).ToString()))
                 {
                     ones4.Enabled = true;
@@ -112,8 +132,13 @@ namespace LongYatzi
         {
             dice.ThrowCount(0);
             dice.ResetHeld();
+            hold1.Checked = false;
+            hold2.Checked = false;
+            hold3.Checked = false;
+            hold4.Checked = false;
+            hold5.Checked = false;
             throw1.Enabled = true;
-            UpdateScoreBoardButtons();
+            UpdateUI();
         }
         private void ones1_Click(object sender, EventArgs e)
         {
