@@ -36,6 +36,10 @@ namespace LongYatzi
         {
             return _throw;
         }
+        public void ThrowCount(int throwcount)
+        {
+            _throw = throwcount;
+        }
         public void Initialize()
         {
             for(int i = 0; i < _diceAmount;i++)

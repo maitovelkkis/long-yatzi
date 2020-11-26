@@ -415,6 +415,7 @@ namespace LongYatzi
             this.ones1.Size = new System.Drawing.Size(37, 23);
             this.ones1.TabIndex = 37;
             this.ones1.UseVisualStyleBackColor = true;
+            this.ones1.Click += new System.EventHandler(this.ones1_Click);
             // 
             // ones2
             // 
@@ -423,6 +424,7 @@ namespace LongYatzi
             this.ones2.Size = new System.Drawing.Size(32, 23);
             this.ones2.TabIndex = 38;
             this.ones2.UseVisualStyleBackColor = true;
+            this.ones2.Click += new System.EventHandler(this.ones2_Click);
             // 
             // ones3
             // 
@@ -431,6 +433,7 @@ namespace LongYatzi
             this.ones3.Size = new System.Drawing.Size(30, 23);
             this.ones3.TabIndex = 39;
             this.ones3.UseVisualStyleBackColor = true;
+            this.ones3.Click += new System.EventHandler(this.ones3_Click);
             // 
             // ones4
             // 
