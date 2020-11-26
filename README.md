@@ -4,13 +4,11 @@ Features working:
 -Dice throwing
 -Holding/locking dice between throws
 
-Work in progress:
-
+Work in progress:\
 -Single player mechanics
 -score keeping
 
-Todo:
-
+Todo:\
 -android implementation
 -local multiplayer
 -online multiplayer
@@ -19,3 +17,4 @@ The game consists of 60 turns per player. Player can throw dice maximum of 3 tim
 Before second and third throw player can hold dice they want to keep.
 When the player is happy with the dice (or out of throws) player has to mark the score in a suitable category.
 If the dice don't add to a score in any category, the player has to discard a suitable category of their choice. 
+In the end scores from all the categories are added together and winner is the player with most points.
