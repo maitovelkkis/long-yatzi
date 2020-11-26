@@ -5,10 +5,12 @@ Features working:
 -Holding/locking dice between throws
 
 Work in progress:
+
 -Single player mechanics
 -score keeping
 
 Todo:
+
 -android implementation
 -local multiplayer
 -online multiplayer
