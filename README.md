@@ -3,7 +3,8 @@ Game similar, but different to Yahtzee. Goal of this project is to adapt the gam
 
 Features working:\
 -Dice throwing\
--Holding/locking dice between throws
+-Holding/locking dice between throws\
+-Upper section of the score board
 
 Work in progress:\
 -Single player mechanics\
