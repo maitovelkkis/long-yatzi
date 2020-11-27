@@ -69,6 +69,15 @@ namespace LongYatzi
         {
             return _throw;
         }
+        public bool HandContains(int _eyecount)
+        {
+            foreach(Die die in _diceList)
+            {
+                if (die.EyeCount == _eyecount)
+                    return true;
+            }
+            return false;
+        }
         #region Dice Validators
         internal int Validate(int _eyecount) //validate category from upper section
         {
@@ -107,13 +116,27 @@ namespace LongYatzi
         {
             throw new NotImplementedException();
         }
-        internal int SmallStraight()
+        internal int ValidateSmallStraight()
         {
-            throw new NotImplementedException();
+            for(int i = 1;i<6;i++)
+            {
+                if(!HandContains(i))
+                {
+                    return 0;
+                }
+            }
+            return 15;
         }
-        internal int BigStraight()
+        internal int ValidateBigStraight()
         {
-            throw new NotImplementedException();
+            for (int i = 2; i < 7; i++)
+            {
+                if (!HandContains(i))
+                {
+                    return 0;
+                }
+            }
+            return 20;
         }
         internal int ValidateFullHouse()
         {
@@ -121,11 +144,15 @@ namespace LongYatzi
         }
         internal int ValidateRandom()
         {
-            throw new NotImplementedException();
+            return _diceList[0].EyeCount + _diceList[1].EyeCount + _diceList[2].EyeCount + _diceList[3].EyeCount + _diceList[5].EyeCount;
         }
         internal int ValidateYatzy()
         {
-            throw new NotImplementedException();
+            if(_diceList[0].EyeCount == _diceList[1].EyeCount && _diceList[0].EyeCount == _diceList[2].EyeCount && _diceList[0].EyeCount == _diceList[3].EyeCount && _diceList[0].EyeCount == _diceList[4].EyeCount)
+            {
+                return 50;
+            }
+            return 0;
         }
         #endregion
     }
