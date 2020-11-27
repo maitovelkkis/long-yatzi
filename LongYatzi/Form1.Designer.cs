@@ -543,6 +543,7 @@ namespace LongYatzi
             this.threes4.Size = new System.Drawing.Size(31, 23);
             this.threes4.TabIndex = 48;
             this.threes4.UseVisualStyleBackColor = true;
+            this.threes4.Click += new System.EventHandler(this.threes4_Click);
             // 
             // threes3
             // 
@@ -551,6 +552,7 @@ namespace LongYatzi
             this.threes3.Size = new System.Drawing.Size(30, 23);
             this.threes3.TabIndex = 47;
             this.threes3.UseVisualStyleBackColor = true;
+            this.threes3.Click += new System.EventHandler(this.threes3_Click);
             // 
             // threes2
             // 
@@ -559,6 +561,7 @@ namespace LongYatzi
             this.threes2.Size = new System.Drawing.Size(30, 23);
             this.threes2.TabIndex = 46;
             this.threes2.UseVisualStyleBackColor = true;
+            this.threes2.Click += new System.EventHandler(this.threes2_Click);
             // 
             // threes1
             // 
@@ -576,6 +579,7 @@ namespace LongYatzi
             this.fours4.Size = new System.Drawing.Size(31, 23);
             this.fours4.TabIndex = 52;
             this.fours4.UseVisualStyleBackColor = true;
+            this.fours4.Click += new System.EventHandler(this.fours4_Click);
             // 
             // fours3
             // 
@@ -584,6 +588,7 @@ namespace LongYatzi
             this.fours3.Size = new System.Drawing.Size(30, 23);
             this.fours3.TabIndex = 51;
             this.fours3.UseVisualStyleBackColor = true;
+            this.fours3.Click += new System.EventHandler(this.fours3_Click);
             // 
             // fours2
             // 
@@ -592,6 +597,7 @@ namespace LongYatzi
             this.fours2.Size = new System.Drawing.Size(30, 23);
             this.fours2.TabIndex = 50;
             this.fours2.UseVisualStyleBackColor = true;
+            this.fours2.Click += new System.EventHandler(this.fours2_Click);
             // 
             // fours1
             // 
@@ -600,6 +606,7 @@ namespace LongYatzi
             this.fours1.Size = new System.Drawing.Size(37, 23);
             this.fours1.TabIndex = 49;
             this.fours1.UseVisualStyleBackColor = true;
+            this.fours1.Click += new System.EventHandler(this.fours1_Click);
             // 
             // fives4
             // 
@@ -608,6 +615,7 @@ namespace LongYatzi
             this.fives4.Size = new System.Drawing.Size(31, 23);
             this.fives4.TabIndex = 56;
             this.fives4.UseVisualStyleBackColor = true;
+            this.fives4.Click += new System.EventHandler(this.fives4_Click);
             // 
             // fives3
             // 
@@ -616,6 +624,7 @@ namespace LongYatzi
             this.fives3.Size = new System.Drawing.Size(30, 23);
             this.fives3.TabIndex = 55;
             this.fives3.UseVisualStyleBackColor = true;
+            this.fives3.Click += new System.EventHandler(this.fives3_Click);
             // 
             // fives2
             // 
@@ -624,6 +633,7 @@ namespace LongYatzi
             this.fives2.Size = new System.Drawing.Size(30, 23);
             this.fives2.TabIndex = 54;
             this.fives2.UseVisualStyleBackColor = true;
+            this.fives2.Click += new System.EventHandler(this.fives2_Click);
             // 
             // fives1
             // 
@@ -632,6 +642,7 @@ namespace LongYatzi
             this.fives1.Size = new System.Drawing.Size(37, 23);
             this.fives1.TabIndex = 53;
             this.fives1.UseVisualStyleBackColor = true;
+            this.fives1.Click += new System.EventHandler(this.fives1_Click);
             // 
             // sixes4
             // 
@@ -640,6 +651,7 @@ namespace LongYatzi
             this.sixes4.Size = new System.Drawing.Size(31, 23);
             this.sixes4.TabIndex = 60;
             this.sixes4.UseVisualStyleBackColor = true;
+            this.sixes4.Click += new System.EventHandler(this.sixes4_Click);
             // 
             // sixes3
             // 
@@ -648,6 +660,7 @@ namespace LongYatzi
             this.sixes3.Size = new System.Drawing.Size(30, 23);
             this.sixes3.TabIndex = 59;
             this.sixes3.UseVisualStyleBackColor = true;
+            this.sixes3.Click += new System.EventHandler(this.sixes3_Click);
             // 
             // sixes2
             // 
@@ -656,6 +669,7 @@ namespace LongYatzi
             this.sixes2.Size = new System.Drawing.Size(30, 23);
             this.sixes2.TabIndex = 58;
             this.sixes2.UseVisualStyleBackColor = true;
+            this.sixes2.Click += new System.EventHandler(this.sixes2_Click);
             // 
             // sixes1
             // 
@@ -664,6 +678,7 @@ namespace LongYatzi
             this.sixes1.Size = new System.Drawing.Size(37, 23);
             this.sixes1.TabIndex = 57;
             this.sixes1.UseVisualStyleBackColor = true;
+            this.sixes1.Click += new System.EventHandler(this.sixes1_Click);
             // 
             // button1
             // 

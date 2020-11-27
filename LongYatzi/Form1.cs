@@ -65,6 +65,22 @@ namespace LongYatzi
             twos2.Enabled = false;
             twos3.Enabled = false;
             twos4.Enabled = false;
+            threes1.Enabled = false;
+            threes2.Enabled = false;
+            threes3.Enabled = false;
+            threes4.Enabled = false;
+            fours1.Enabled = false;
+            fours2.Enabled = false;
+            fours3.Enabled = false;
+            fours4.Enabled = false;
+            fives1.Enabled = false;
+            fives2.Enabled = false;
+            fives3.Enabled = false;
+            fives4.Enabled = false;
+            sixes1.Enabled = false;
+            sixes2.Enabled = false;
+            sixes3.Enabled = false;
+            sixes4.Enabled = false;
             ones1.Text = scoreBoard.GetScoreUp(1, 1).ToString();
             ones2.Text = scoreBoard.GetScoreUp(2, 1).ToString();
             ones3.Text = scoreBoard.GetScoreUp(3, 1).ToString();
@@ -73,6 +89,22 @@ namespace LongYatzi
             twos2.Text = scoreBoard.GetScoreUp(2, 2).ToString();
             twos3.Text = scoreBoard.GetScoreUp(3, 2).ToString();
             twos3.Text = scoreBoard.GetScoreUp(4, 2).ToString();
+            threes1.Text = scoreBoard.GetScoreUp(1, 3).ToString();
+            threes2.Text = scoreBoard.GetScoreUp(2, 3).ToString();
+            threes3.Text = scoreBoard.GetScoreUp(3, 3).ToString();
+            threes4.Text = scoreBoard.GetScoreUp(4, 3).ToString();
+            fours1.Text = scoreBoard.GetScoreUp(1, 4).ToString();
+            fours2.Text = scoreBoard.GetScoreUp(2, 4).ToString();
+            fours3.Text = scoreBoard.GetScoreUp(3, 4).ToString();
+            fours4.Text = scoreBoard.GetScoreUp(4, 4).ToString();
+            fives1.Text = scoreBoard.GetScoreUp(1, 5).ToString();
+            fives2.Text = scoreBoard.GetScoreUp(2, 5).ToString();
+            fives3.Text = scoreBoard.GetScoreUp(3, 5).ToString();
+            fives4.Text = scoreBoard.GetScoreUp(4, 5).ToString();
+            sixes1.Text = scoreBoard.GetScoreUp(1, 6).ToString();
+            sixes2.Text = scoreBoard.GetScoreUp(2, 6).ToString();
+            sixes3.Text = scoreBoard.GetScoreUp(3, 6).ToString();
+            sixes4.Text = scoreBoard.GetScoreUp(4, 6).ToString();
             die1.Visible = true;
             die2.Visible = true;
             die3.Visible = true;
@@ -109,6 +141,26 @@ namespace LongYatzi
                     twos1.Enabled = true;
                     twos1.Text = dice.Validate(2).ToString();
                 }
+                if (string.IsNullOrEmpty(scoreBoard.GetScoreUp(1, 3).ToString()))
+                {
+                    threes1.Enabled = true;
+                    threes1.Text = dice.Validate(3).ToString();
+                }
+                if (string.IsNullOrEmpty(scoreBoard.GetScoreUp(1, 4).ToString()))
+                {
+                    fours1.Enabled = true;
+                    fours1.Text = dice.Validate(4).ToString();
+                }
+                if (string.IsNullOrEmpty(scoreBoard.GetScoreUp(1, 5).ToString()))
+                {
+                    fives1.Enabled = true;
+                    fives1.Text = dice.Validate(5).ToString();
+                }
+                if (string.IsNullOrEmpty(scoreBoard.GetScoreUp(1, 6).ToString()))
+                {
+                    sixes1.Enabled = true;
+                    sixes1.Text = dice.Validate(6).ToString();
+                }
             }
             if (dice.GetThrow() <= 2 && dice.GetThrow() != 0)
             {
@@ -122,6 +174,26 @@ namespace LongYatzi
                     twos2.Enabled = true;
                     twos2.Text = dice.Validate(2).ToString();
                 }
+                if (string.IsNullOrEmpty(scoreBoard.GetScoreUp(2, 3).ToString()))
+                {
+                    threes2.Enabled = true;
+                    threes2.Text = dice.Validate(3).ToString();
+                }
+                if (string.IsNullOrEmpty(scoreBoard.GetScoreUp(2, 4).ToString()))
+                {
+                    fours2.Enabled = true;
+                    fours2.Text = dice.Validate(4).ToString();
+                }
+                if (string.IsNullOrEmpty(scoreBoard.GetScoreUp(2, 5).ToString()))
+                {
+                    fives2.Enabled = true;
+                    fives2.Text = dice.Validate(5).ToString();
+                }
+                if (string.IsNullOrEmpty(scoreBoard.GetScoreUp(2, 6).ToString()))
+                {
+                    sixes2.Enabled = true;
+                    sixes2.Text = dice.Validate(6).ToString();
+                }
             }
             if (dice.GetThrow() <= 3 && dice.GetThrow() != 0)
             {
@@ -134,6 +206,26 @@ namespace LongYatzi
                 {
                     twos3.Enabled = true;
                     twos3.Text = dice.Validate(2).ToString();
+                }
+                if (string.IsNullOrEmpty(scoreBoard.GetScoreUp(3, 3).ToString()))
+                {
+                    threes3.Enabled = true;
+                    threes3.Text = dice.Validate(3).ToString();
+                }
+                if (string.IsNullOrEmpty(scoreBoard.GetScoreUp(3, 4).ToString()))
+                {
+                    fours3.Enabled = true;
+                    fours3.Text = dice.Validate(4).ToString();
+                }
+                if (string.IsNullOrEmpty(scoreBoard.GetScoreUp(3, 5).ToString()))
+                {
+                    fives3.Enabled = true;
+                    fives3.Text = dice.Validate(5).ToString();
+                }
+                if (string.IsNullOrEmpty(scoreBoard.GetScoreUp(3, 6).ToString()))
+                {
+                    sixes3.Enabled = true;
+                    sixes3.Text = dice.Validate(6).ToString();
                 }
                 if (string.IsNullOrEmpty(scoreBoard.GetScoreUp(4, 1).ToString()))
                 {
@@ -149,6 +241,38 @@ namespace LongYatzi
                     {
                         twos4.Enabled = true;
                         twos4.Text = dice.Validate(2).ToString();
+                    }
+                }
+                if (string.IsNullOrEmpty(scoreBoard.GetScoreUp(4, 3).ToString()))
+                {
+                    if (scoreBoard.GetActiveForceCell() == 2)
+                    {
+                        threes4.Enabled = true;
+                        threes4.Text = dice.Validate(3).ToString();
+                    }
+                }
+                if (string.IsNullOrEmpty(scoreBoard.GetScoreUp(4, 4).ToString()))
+                {
+                    if (scoreBoard.GetActiveForceCell() == 3)
+                    {
+                        fours4.Enabled = true;
+                        fours4.Text = dice.Validate(4).ToString();
+                    }
+                }
+                if (string.IsNullOrEmpty(scoreBoard.GetScoreUp(4, 4).ToString()))
+                {
+                    if (scoreBoard.GetActiveForceCell() == 4)
+                    {
+                        fives4.Enabled = true;
+                        fives4.Text = dice.Validate(5).ToString();
+                    }
+                }
+                if (string.IsNullOrEmpty(scoreBoard.GetScoreUp(4, 5).ToString()))
+                {
+                    if (scoreBoard.GetActiveForceCell() == 5)
+                    {
+                        sixes4.Enabled = true;
+                        sixes4.Text = dice.Validate(6).ToString();
                     }
                 }
             }
@@ -229,7 +353,130 @@ namespace LongYatzi
 
         private void threes1_Click(object sender, EventArgs e)
         {
+            int _throw = 1;
+            int _eyecount = 3;
+            scoreBoard.StoreScoreUp(_throw, _eyecount, dice.Validate(_eyecount));
+            NewTurn();
+        }
 
+        private void threes2_Click(object sender, EventArgs e)
+        {
+            int _throw = 2;
+            int _eyecount = 3;
+            scoreBoard.StoreScoreUp(_throw, _eyecount, dice.Validate(_eyecount));
+            NewTurn();
+        }
+
+        private void threes3_Click(object sender, EventArgs e)
+        {
+            int _throw = 3;
+            int _eyecount = 3;
+            scoreBoard.StoreScoreUp(_throw, _eyecount, dice.Validate(_eyecount));
+            NewTurn();
+        }
+
+        private void threes4_Click(object sender, EventArgs e)
+        {
+            int _throw = 4;
+            int _eyecount = 3;
+            scoreBoard.StoreScoreUp(_throw, _eyecount, dice.Validate(_eyecount));
+            NewTurn();
+        }
+
+        private void fours1_Click(object sender, EventArgs e)
+        {
+            int _throw = 1;
+            int _eyecount = 4;
+            scoreBoard.StoreScoreUp(_throw, _eyecount, dice.Validate(_eyecount));
+            NewTurn();
+        }
+
+        private void fours2_Click(object sender, EventArgs e)
+        {
+            int _throw = 2;
+            int _eyecount = 4;
+            scoreBoard.StoreScoreUp(_throw, _eyecount, dice.Validate(_eyecount));
+            NewTurn();
+        }
+
+        private void fours3_Click(object sender, EventArgs e)
+        {
+            int _throw = 3;
+            int _eyecount = 4;
+            scoreBoard.StoreScoreUp(_throw, _eyecount, dice.Validate(_eyecount));
+            NewTurn();
+        }
+
+        private void fours4_Click(object sender, EventArgs e)
+        {
+            int _throw = 4;
+            int _eyecount = 4;
+            scoreBoard.StoreScoreUp(_throw, _eyecount, dice.Validate(_eyecount));
+            NewTurn();
+        }
+
+        private void fives1_Click(object sender, EventArgs e)
+        {
+            int _throw = 1;
+            int _eyecount = 5;
+            scoreBoard.StoreScoreUp(_throw, _eyecount, dice.Validate(_eyecount));
+            NewTurn();
+        }
+
+        private void fives2_Click(object sender, EventArgs e)
+        {
+            int _throw = 2;
+            int _eyecount = 5;
+            scoreBoard.StoreScoreUp(_throw, _eyecount, dice.Validate(_eyecount));
+            NewTurn();
+        }
+
+        private void fives3_Click(object sender, EventArgs e)
+        {
+            int _throw = 3;
+            int _eyecount = 5;
+            scoreBoard.StoreScoreUp(_throw, _eyecount, dice.Validate(_eyecount));
+            NewTurn();
+        }
+
+        private void fives4_Click(object sender, EventArgs e)
+        {
+            int _throw = 4;
+            int _eyecount = 5;
+            scoreBoard.StoreScoreUp(_throw, _eyecount, dice.Validate(_eyecount));
+            NewTurn();
+        }
+
+        private void sixes1_Click(object sender, EventArgs e)
+        {
+            int _throw = 1;
+            int _eyecount = 6;
+            scoreBoard.StoreScoreUp(_throw, _eyecount, dice.Validate(_eyecount));
+            NewTurn();
+        }
+
+        private void sixes2_Click(object sender, EventArgs e)
+        {
+            int _throw = 2;
+            int _eyecount = 6;
+            scoreBoard.StoreScoreUp(_throw, _eyecount, dice.Validate(_eyecount));
+            NewTurn();
+        }
+
+        private void sixes3_Click(object sender, EventArgs e)
+        {
+            int _throw = 3;
+            int _eyecount = 6;
+            scoreBoard.StoreScoreUp(_throw, _eyecount, dice.Validate(_eyecount));
+            NewTurn();
+        }
+
+        private void sixes4_Click(object sender, EventArgs e)
+        {
+            int _throw = 4;
+            int _eyecount = 6;
+            scoreBoard.StoreScoreUp(_throw, _eyecount, dice.Validate(_eyecount));
+            NewTurn();
         }
     }
 }
