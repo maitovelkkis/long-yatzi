@@ -567,6 +567,7 @@ namespace LongYatzi
             this.threes1.Size = new System.Drawing.Size(37, 23);
             this.threes1.TabIndex = 45;
             this.threes1.UseVisualStyleBackColor = true;
+            this.threes1.Click += new System.EventHandler(this.threes1_Click);
             // 
             // fours4
             // 

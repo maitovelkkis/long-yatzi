@@ -31,14 +31,14 @@ namespace LongYatzi
                 upperSection[_throw, _eyecount] = _score;
             }
         }
-        public int? GetScoreUp(int _throw,int _eyecount)
+        public int? GetScoreUp(int _throw, int _eyecount)
         {
-            _eyecount--;
-            if(_throw == 4 && forcedColumn.Count() == 0)
+            if(_throw == 4 && _eyecount > forcedColumn.Count())
             {
                 return null;
             }
-            if(_throw == 4)
+            _eyecount--;
+            if (_throw == 4)
             {
                 return forcedColumn[_eyecount];
             }
@@ -90,6 +90,10 @@ namespace LongYatzi
                 }
             }
             return false;
+        }
+        public int GetActiveForceCell()
+        {
+            return forcedColumn.Count();
         }
     }
 }
