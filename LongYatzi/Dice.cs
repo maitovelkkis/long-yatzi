@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.CompilerServices;
 
+[assembly: InternalsVisibleToAttribute("LongYatziUnitTests")]
 namespace LongYatzi
 {
-    class Dice
+
+    internal class Dice
     {
         private int _diceAmount = 5;
         private int _throw = 0;
@@ -27,6 +30,10 @@ namespace LongYatzi
                 }
             }
             _throw++;
+        }
+        public void AddDie(int _eyecount)
+        {
+            _diceList.Add(new Die(_eyecount));
         }
         public List<Die> ReadDice()
         {
@@ -62,8 +69,8 @@ namespace LongYatzi
         {
             return _throw;
         }
-
-        internal int Validate(int _eyecount)
+        #region Dice Validators
+        internal int Validate(int _eyecount) //validate category from upper section
         {
             int score = -3;
             foreach (Die die in _diceList)
@@ -75,5 +82,51 @@ namespace LongYatzi
             }
             return score * _eyecount;
         }
+        internal int ValidatePair()
+        {
+            for(int _eyecount = 6;_eyecount>0;_eyecount--)
+            {
+                int score = 0;
+                foreach(Die die in _diceList)
+                {
+                    if (die.EyeCount == _eyecount) score += _eyecount;
+                }
+                if (score > _eyecount) return _eyecount * 2;
+            }
+            return 0;
+        }
+        internal int ValidateTwoPairs()
+        {
+            throw new NotImplementedException();
+        }
+        internal int ValidateThreeSame()
+        {
+            throw new NotImplementedException();
+        }
+        internal int ValidateFourSame()
+        {
+            throw new NotImplementedException();
+        }
+        internal int SmallStraight()
+        {
+            throw new NotImplementedException();
+        }
+        internal int BigStraight()
+        {
+            throw new NotImplementedException();
+        }
+        internal int ValidateFullHouse()
+        {
+            throw new NotImplementedException();
+        }
+        internal int ValidateRandom()
+        {
+            throw new NotImplementedException();
+        }
+        internal int ValidateYatzy()
+        {
+            throw new NotImplementedException();
+        }
+        #endregion
     }
 }
