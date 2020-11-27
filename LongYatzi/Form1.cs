@@ -15,6 +15,14 @@ namespace LongYatzi
         private void Form1_Load(object sender, EventArgs e)
         {
             dice.Initialize();
+            uppertotal1.Visible = false;
+            uppertotal2.Visible = false;
+            uppertotal3.Visible = false;
+            uppertotal4.Visible = false;
+            bonus1.Visible = false;
+            bonus2.Visible = false;
+            bonus3.Visible = false;
+            bonus4.Visible = false;
             UpdateUI();
         }
 
@@ -81,6 +89,34 @@ namespace LongYatzi
             sixes2.Enabled = false;
             sixes3.Enabled = false;
             sixes4.Enabled = false;
+            if(scoreBoard.UpperSectionFull(0))
+            {
+                uppertotal1.Visible = true;
+                uppertotal1.Text = scoreBoard.UpperSectionTotal(0).ToString();
+                bonus1.Visible = true;
+                bonus1.Text = scoreBoard.GetBonus(0).ToString();
+            }
+            if (scoreBoard.UpperSectionFull(1))
+            {
+                uppertotal2.Visible = true;
+                uppertotal2.Text = scoreBoard.UpperSectionTotal(1).ToString();
+                bonus2.Visible = true;
+                bonus2.Text = scoreBoard.GetBonus(1).ToString();
+            }
+            if (scoreBoard.UpperSectionFull(2))
+            {
+                uppertotal3.Visible = true;
+                uppertotal3.Text = scoreBoard.UpperSectionTotal(2).ToString();
+                bonus3.Visible = true;
+                bonus3.Text = scoreBoard.GetBonus(2).ToString();
+            }
+            if (scoreBoard.UpperSectionFull(3))
+            {
+                uppertotal4.Visible = true;
+                uppertotal4.Text = scoreBoard.UpperSectionTotal(3).ToString();
+                bonus4.Visible = true;
+                bonus4.Text = scoreBoard.GetBonus(3).ToString();
+            }
             ones1.Text = scoreBoard.GetScoreUp(1, 1).ToString();
             ones2.Text = scoreBoard.GetScoreUp(2, 1).ToString();
             ones3.Text = scoreBoard.GetScoreUp(3, 1).ToString();
@@ -259,7 +295,7 @@ namespace LongYatzi
                         fours4.Text = dice.Validate(4).ToString();
                     }
                 }
-                if (string.IsNullOrEmpty(scoreBoard.GetScoreUp(4, 4).ToString()))
+                if (string.IsNullOrEmpty(scoreBoard.GetScoreUp(4, 5).ToString()))
                 {
                     if (scoreBoard.GetActiveForceCell() == 4)
                     {
@@ -267,7 +303,7 @@ namespace LongYatzi
                         fives4.Text = dice.Validate(5).ToString();
                     }
                 }
-                if (string.IsNullOrEmpty(scoreBoard.GetScoreUp(4, 5).ToString()))
+                if (string.IsNullOrEmpty(scoreBoard.GetScoreUp(4, 6).ToString()))
                 {
                     if (scoreBoard.GetActiveForceCell() == 5)
                     {

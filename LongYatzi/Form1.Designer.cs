@@ -42,9 +42,9 @@ namespace LongYatzi
             this.hold4 = new System.Windows.Forms.CheckBox();
             this.hold5 = new System.Windows.Forms.CheckBox();
             this.throwcount = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.uppertotal1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.uppertotal2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -127,6 +127,12 @@ namespace LongYatzi
             this.button34 = new System.Windows.Forms.Button();
             this.button35 = new System.Windows.Forms.Button();
             this.button36 = new System.Windows.Forms.Button();
+            this.uppertotal3 = new System.Windows.Forms.Label();
+            this.uppertotal4 = new System.Windows.Forms.Label();
+            this.bonus1 = new System.Windows.Forms.Label();
+            this.bonus2 = new System.Windows.Forms.Label();
+            this.bonus3 = new System.Windows.Forms.Label();
+            this.bonus4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // throw1
@@ -239,14 +245,14 @@ namespace LongYatzi
             this.throwcount.Size = new System.Drawing.Size(0, 13);
             this.throwcount.TabIndex = 11;
             // 
-            // label1
+            // uppertotal1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "label1";
+            this.uppertotal1.AutoSize = true;
+            this.uppertotal1.Location = new System.Drawing.Point(118, 307);
+            this.uppertotal1.Name = "uppertotal1";
+            this.uppertotal1.Size = new System.Drawing.Size(27, 13);
+            this.uppertotal1.TabIndex = 12;
+            this.uppertotal1.Text = "total";
             // 
             // label2
             // 
@@ -257,14 +263,14 @@ namespace LongYatzi
             this.label2.TabIndex = 13;
             this.label2.Text = "Hold";
             // 
-            // label3
+            // uppertotal2
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(0, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 14;
-            this.label3.Text = "label3";
+            this.uppertotal2.AutoSize = true;
+            this.uppertotal2.Location = new System.Drawing.Point(170, 307);
+            this.uppertotal2.Name = "uppertotal2";
+            this.uppertotal2.Size = new System.Drawing.Size(35, 13);
+            this.uppertotal2.TabIndex = 14;
+            this.uppertotal2.Text = "label3";
             // 
             // label4
             // 
@@ -968,11 +974,71 @@ namespace LongYatzi
             this.button36.TabIndex = 93;
             this.button36.UseVisualStyleBackColor = true;
             // 
+            // uppertotal3
+            // 
+            this.uppertotal3.AutoSize = true;
+            this.uppertotal3.Location = new System.Drawing.Point(220, 307);
+            this.uppertotal3.Name = "uppertotal3";
+            this.uppertotal3.Size = new System.Drawing.Size(35, 13);
+            this.uppertotal3.TabIndex = 97;
+            this.uppertotal3.Text = "label3";
+            // 
+            // uppertotal4
+            // 
+            this.uppertotal4.AutoSize = true;
+            this.uppertotal4.Location = new System.Drawing.Point(288, 307);
+            this.uppertotal4.Name = "uppertotal4";
+            this.uppertotal4.Size = new System.Drawing.Size(35, 13);
+            this.uppertotal4.TabIndex = 98;
+            this.uppertotal4.Text = "label3";
+            // 
+            // bonus1
+            // 
+            this.bonus1.AutoSize = true;
+            this.bonus1.Location = new System.Drawing.Point(113, 335);
+            this.bonus1.Name = "bonus1";
+            this.bonus1.Size = new System.Drawing.Size(42, 13);
+            this.bonus1.TabIndex = 99;
+            this.bonus1.Text = "bonus1";
+            // 
+            // bonus2
+            // 
+            this.bonus2.AutoSize = true;
+            this.bonus2.Location = new System.Drawing.Point(170, 335);
+            this.bonus2.Name = "bonus2";
+            this.bonus2.Size = new System.Drawing.Size(42, 13);
+            this.bonus2.TabIndex = 100;
+            this.bonus2.Text = "bonus2";
+            // 
+            // bonus3
+            // 
+            this.bonus3.AutoSize = true;
+            this.bonus3.Location = new System.Drawing.Point(220, 335);
+            this.bonus3.Name = "bonus3";
+            this.bonus3.Size = new System.Drawing.Size(42, 13);
+            this.bonus3.TabIndex = 101;
+            this.bonus3.Text = "bonus1";
+            // 
+            // bonus4
+            // 
+            this.bonus4.AutoSize = true;
+            this.bonus4.Location = new System.Drawing.Point(281, 335);
+            this.bonus4.Name = "bonus4";
+            this.bonus4.Size = new System.Drawing.Size(42, 13);
+            this.bonus4.TabIndex = 102;
+            this.bonus4.Text = "bonus1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(395, 657);
+            this.Controls.Add(this.bonus4);
+            this.Controls.Add(this.bonus3);
+            this.Controls.Add(this.bonus2);
+            this.Controls.Add(this.bonus1);
+            this.Controls.Add(this.uppertotal4);
+            this.Controls.Add(this.uppertotal3);
             this.Controls.Add(this.button33);
             this.Controls.Add(this.button34);
             this.Controls.Add(this.button35);
@@ -1055,9 +1121,9 @@ namespace LongYatzi
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.uppertotal2);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.uppertotal1);
             this.Controls.Add(this.throwcount);
             this.Controls.Add(this.hold5);
             this.Controls.Add(this.hold4);
@@ -1102,9 +1168,9 @@ namespace LongYatzi
         private System.Windows.Forms.CheckBox hold4;
         private System.Windows.Forms.CheckBox hold5;
         private System.Windows.Forms.Label throwcount;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label uppertotal1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label uppertotal2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
@@ -1187,6 +1253,12 @@ namespace LongYatzi
         private System.Windows.Forms.Button button34;
         private System.Windows.Forms.Button button35;
         private System.Windows.Forms.Button button36;
+        private System.Windows.Forms.Label uppertotal3;
+        private System.Windows.Forms.Label uppertotal4;
+        private System.Windows.Forms.Label bonus1;
+        private System.Windows.Forms.Label bonus2;
+        private System.Windows.Forms.Label bonus3;
+        private System.Windows.Forms.Label bonus4;
     }
 }
 

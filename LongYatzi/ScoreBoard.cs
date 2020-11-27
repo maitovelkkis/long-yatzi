@@ -7,6 +7,7 @@ namespace LongYatzi
     {
         int?[,] upperSection = new int?[3, 6]; //x = throw 1-3, y = dice eye count - 1
         int?[,] lowerSection = new int?[3, 9]; //x = throw 1-3, y = category of points
+        int[] bonuses = new int[4];
         List<int> forcedColumn = new List<int>();
         /*0 = pairs
          *1 = 2 pairs
@@ -56,21 +57,15 @@ namespace LongYatzi
             }
             else if(_throw == 1)
             {
-                for (int i = 0; i < 6; i++)
+                if (!UpperSectionFull(1))
                 {
-                    if(upperSection[1,i]==null)
-                    {
-                        return true;
-                    }
+                    return true;
                 }
-                for (int i = 0; i < 6; i++)
+                if (!UpperSectionFull(2))
                 {
-                    if (upperSection[2, i] == null)
-                    {
-                        return true;
-                    }
+                    return true;
                 }
-                if(forcedColumn.Count<15)
+                if (!UpperSectionFull(3))
                 {
                     return true;
                 }
@@ -94,6 +89,51 @@ namespace LongYatzi
         public int GetActiveForceCell()
         {
             return forcedColumn.Count();
+        }
+        public bool UpperSectionFull(int column)
+        {
+            if (column == 3)
+            {
+                if (forcedColumn.Count < 6)//is not full
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                for (int i = 0; i < 6; i++)
+                {
+                    if (upperSection[column, i] == null)
+                    {
+                        return false;
+                    }
+                }
+            }
+            if(UpperSectionTotal(column)>=0)
+            {
+                bonuses[column] = 50;
+            }
+            return true;
+        }
+        public int? UpperSectionTotal(int column)
+        {
+            int? total = 0;
+            for(int i = 0;i<6;i++)
+            {
+                if (column == 3)
+                {
+                    total += forcedColumn[i];
+                }
+                else
+                {
+                    total += upperSection[column, i];
+                }
+            }
+            return total;
+        }
+        public int GetBonus(int column)
+        {
+            return bonuses[column];
         }
     }
 }
