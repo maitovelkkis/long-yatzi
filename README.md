@@ -1,16 +1,19 @@
 # long-yatzi
 Game similar, but different to Yahtzee. Goal of this project is to adapt the game for Android. At the moment the game ui is only windows forms based.
-Features working:
--Dice throwing
+
+Features working:\
+-Dice throwing\
 -Holding/locking dice between throws
 
 Work in progress:\
--Single player mechanics
--score keeping
+-Single player mechanics\
+-score keeping\
+-windows forms based UI
 
 Todo:\
--android implementation
--local multiplayer
+-local high score table\
+-android implementation\
+-local multiplayer\
 -online multiplayer
 
 The game consists of 60 turns per player. Player can throw dice maximum of 3 times per turn.
