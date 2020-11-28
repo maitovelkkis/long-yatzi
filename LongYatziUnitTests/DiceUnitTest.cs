@@ -44,6 +44,17 @@ namespace LongYatziUnitTests
 
         //Added Test Methods for Validating Two Pairs
         [TestMethod]
+        public void ValidateTwoPairs_6() //should return 0 as no pair was found
+        {
+            Dice dice = new Dice();
+            dice.AddDie(1);
+            dice.AddDie(1);
+            dice.AddDie(1);
+            dice.AddDie(2);
+            dice.AddDie(2);
+            Assert.AreEqual(6, dice.ValidateTwoPairs());
+        }
+        [TestMethod]
         public void ValidateTwoPairs_0_0() //should return 0 as no pair was found
         {
             Dice dice = new Dice();

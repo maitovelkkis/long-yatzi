@@ -70,7 +70,7 @@ namespace LongYatzi
             }
             if (_throw == 4)
             {
-                return forcedColumn[_category+6];
+                return forcedColumn[_category+5];
             }
             else
             {

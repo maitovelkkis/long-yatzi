@@ -378,7 +378,22 @@ namespace LongYatzi
                 if (string.IsNullOrEmpty(scoreBoard.GetScoreDown(2, 5).ToString()))
                 {
                     bigStraight2.Enabled = true;
-                    bigStraight2.Text = dice.ValidateSmallStraight().ToString();
+                    bigStraight2.Text = dice.ValidateBigStraight().ToString();
+                }
+                if (string.IsNullOrEmpty(scoreBoard.GetScoreDown(2, 6).ToString()))
+                {
+                    fullHouse2.Enabled = true;
+                    fullHouse2.Text = dice.ValidateFullHouse().ToString();
+                }
+                if (string.IsNullOrEmpty(scoreBoard.GetScoreDown(2, 7).ToString()))
+                {
+                    random2.Enabled = true;
+                    random2.Text = dice.ValidateRandom().ToString();
+                }
+                if (string.IsNullOrEmpty(scoreBoard.GetScoreDown(2, 8).ToString()))
+                {
+                    yatzy2.Enabled = true;
+                    yatzy2.Text = dice.ValidateYatzy().ToString();
                 }
             }
             if (dice.GetThrow() <= 3 && dice.GetThrow() != 0)
@@ -412,6 +427,51 @@ namespace LongYatzi
                 {
                     sixes3.Enabled = true;
                     sixes3.Text = dice.Validate(6).ToString();
+                }
+                if (string.IsNullOrEmpty(scoreBoard.GetScoreDown(3, 0).ToString()))
+                {
+                    pair3.Enabled = true;
+                    pair3.Text = dice.ValidatePair().ToString();
+                }
+                if (string.IsNullOrEmpty(scoreBoard.GetScoreDown(3, 1).ToString()))
+                {
+                    twoPairs3.Enabled = true;
+                    twoPairs3.Text = dice.ValidateTwoPairs().ToString();
+                }
+                if (string.IsNullOrEmpty(scoreBoard.GetScoreDown(3, 2).ToString()))
+                {
+                    threeSame3.Enabled = true;
+                    threeSame3.Text = dice.ValidateThreeSame().ToString();
+                }
+                if (string.IsNullOrEmpty(scoreBoard.GetScoreDown(3, 3).ToString()))
+                {
+                    fourSame3.Enabled = true;
+                    fourSame3.Text = dice.ValidateFourSame().ToString();
+                }
+                if (string.IsNullOrEmpty(scoreBoard.GetScoreDown(3, 4).ToString()))
+                {
+                    smallStraight3.Enabled = true;
+                    smallStraight3.Text = dice.ValidateSmallStraight().ToString();
+                }
+                if (string.IsNullOrEmpty(scoreBoard.GetScoreDown(3, 5).ToString()))
+                {
+                    bigStraight3.Enabled = true;
+                    bigStraight3.Text = dice.ValidateBigStraight().ToString();
+                }
+                if (string.IsNullOrEmpty(scoreBoard.GetScoreDown(3, 6).ToString()))
+                {
+                    fullHouse3.Enabled = true;
+                    fullHouse3.Text = dice.ValidateFullHouse().ToString();
+                }
+                if (string.IsNullOrEmpty(scoreBoard.GetScoreDown(3, 7).ToString()))
+                {
+                    random3.Enabled = true;
+                    random3.Text = dice.ValidateRandom().ToString();
+                }
+                if (string.IsNullOrEmpty(scoreBoard.GetScoreDown(3, 8).ToString()))
+                {
+                    yatzy3.Enabled = true;
+                    yatzy3.Text = dice.ValidateYatzy().ToString();
                 }
                 if (string.IsNullOrEmpty(scoreBoard.GetScoreUp(4, 1).ToString()))
                 {
@@ -459,6 +519,22 @@ namespace LongYatzi
                     {
                         sixes4.Enabled = true;
                         sixes4.Text = dice.Validate(6).ToString();
+                    }
+                }
+                if (string.IsNullOrEmpty(scoreBoard.GetScoreDown(4, 0).ToString()))
+                {
+                    if (scoreBoard.GetActiveForceCell() == 6)
+                    {
+                        pair4.Enabled = true;
+                        pair4.Text = dice.ValidatePair().ToString();
+                    }
+                }
+                if (string.IsNullOrEmpty(scoreBoard.GetScoreDown(4, 1).ToString()))
+                {
+                    if (scoreBoard.GetActiveForceCell() == 7)
+                    {
+                        twoPairs4.Enabled = true;
+                        twoPairs4.Text = dice.ValidateTwoPairs().ToString();
                     }
                 }
             }
