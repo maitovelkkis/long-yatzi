@@ -127,19 +127,31 @@ namespace LongYatzi
         }
         internal int ValidateThreeSame()
         {
-            throw new NotImplementedException();
+            for (int _eyecount = 6; _eyecount > 0; _eyecount--)
+            {
+                int _score = 0;
+                foreach (Die die in _diceList)
+                {
+                    if (die.EyeCount == _eyecount)
+                    {
+                        _score += die.EyeCount;
+                        if (_score == _eyecount * 3) return _score;
+                    }
+                }
+            }
+            return 0;
         }
         internal int ValidateFourSame()
         {
-            for(int i = 6;i>0;i--)
+            for(int _eyecount = 6;_eyecount>0;_eyecount--)
             {
                 int _score = 0;
                 foreach(Die die in _diceList)
                 {
-                    if (die.EyeCount == i)
+                    if (die.EyeCount == _eyecount)
                     {
                         _score += die.EyeCount;
-                        if (_score == i * 4) return _score;
+                        if (_score == _eyecount * 4) return _score;
                     }
                 }
             }
@@ -169,7 +181,20 @@ namespace LongYatzi
         }
         internal int ValidateFullHouse()
         {
-            throw new NotImplementedException();
+            if (ValidateYatzy() > 0) return _diceList[0].EyeCount * 5;
+            if(ValidateThreeSame() > 0) //threesame found, trying to find a pair
+            {
+                int score = ValidateThreeSame();
+                for (int _eyecount = score/3-1; _eyecount > 0; _eyecount--)
+                {
+                    foreach (Die die in _diceList)
+                    {
+                        if (die.EyeCount == _eyecount) score += _eyecount;
+                    }
+                    if (score > ValidateThreeSame()) return score;
+                }
+            }
+            return 0;
         }
         internal int ValidateRandom()
         {

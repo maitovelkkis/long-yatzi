@@ -250,5 +250,93 @@ namespace LongYatziUnitTests
             dice.AddDie(1);
             Assert.AreEqual(0, dice.ValidateTwoPairs());
         }
+        [TestMethod]
+        public void ValidateThreeSame_0() //should return 0
+        {
+            Dice dice = new Dice();
+            dice.AddDie(1);
+            dice.AddDie(1);
+            dice.AddDie(4);
+            dice.AddDie(3);
+            dice.AddDie(2);
+            Assert.AreEqual(0, dice.ValidateThreeSame());
+        }
+        [TestMethod]
+        public void ValidateThreeSame_3() //should return 3
+        {
+            Dice dice = new Dice();
+            dice.AddDie(1);
+            dice.AddDie(1);
+            dice.AddDie(4);
+            dice.AddDie(3);
+            dice.AddDie(1);
+            Assert.AreEqual(3, dice.ValidateThreeSame());
+        }
+        [TestMethod]
+        public void ValidateThreeSame_18() //should return 18
+        {
+            Dice dice = new Dice();
+            dice.AddDie(6);
+            dice.AddDie(6);
+            dice.AddDie(4);
+            dice.AddDie(3);
+            dice.AddDie(6);
+            Assert.AreEqual(18, dice.ValidateThreeSame());
+        }
+        [TestMethod]
+        public void ValidateThreeSame_18_2() //should return 18
+        {
+            Dice dice = new Dice();
+            dice.AddDie(6);
+            dice.AddDie(6);
+            dice.AddDie(4);
+            dice.AddDie(6);
+            dice.AddDie(6);
+            Assert.AreEqual(18, dice.ValidateThreeSame());
+        }
+        [TestMethod]
+        public void ValidateFullHouse_20() //should return 20
+        {
+            Dice dice = new Dice();
+            dice.AddDie(6);
+            dice.AddDie(6);
+            dice.AddDie(1);
+            dice.AddDie(6);
+            dice.AddDie(1);
+            Assert.AreEqual(20, dice.ValidateFullHouse());
+        }
+        [TestMethod]
+        public void ValidateFullHouse_5() //should return 5
+        {
+            Dice dice = new Dice();
+            dice.AddDie(1);
+            dice.AddDie(1);
+            dice.AddDie(1);
+            dice.AddDie(1);
+            dice.AddDie(1);
+            Assert.AreEqual(5, dice.ValidateFullHouse());
+        }
+        [TestMethod]
+        public void ValidateFullHouse_30() //should return 30
+        {
+            Dice dice = new Dice();
+            dice.AddDie(6);
+            dice.AddDie(6);
+            dice.AddDie(6);
+            dice.AddDie(6);
+            dice.AddDie(6);
+            Assert.AreEqual(30, dice.ValidateFullHouse());
+        }
+        [TestMethod]
+        public void ValidateFullHouse_0() //should return 30
+        {
+            Dice dice = new Dice();
+            dice.AddDie(6);
+            dice.AddDie(6);
+            dice.AddDie(2);
+            dice.AddDie(3);
+            dice.AddDie(3);
+            Assert.AreEqual(0, dice.ValidateFullHouse());
+        }
     }
 }
