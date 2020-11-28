@@ -311,7 +311,7 @@ namespace LongYatzi
                 if (string.IsNullOrEmpty(scoreBoard.GetScoreDown(1, 7).ToString()))
                 {
                     random1.Enabled = true;
-                    random1.Text = dice.ValidateRandom().ToString();
+                    random1.Text = dice.Sum().ToString();
                 }
                 if (string.IsNullOrEmpty(scoreBoard.GetScoreDown(1, 8).ToString()))
                 {
@@ -389,7 +389,7 @@ namespace LongYatzi
                 if (string.IsNullOrEmpty(scoreBoard.GetScoreDown(2, 7).ToString()))
                 {
                     random2.Enabled = true;
-                    random2.Text = dice.ValidateRandom().ToString();
+                    random2.Text = dice.Sum().ToString();
                 }
                 if (string.IsNullOrEmpty(scoreBoard.GetScoreDown(2, 8).ToString()))
                 {
@@ -467,7 +467,7 @@ namespace LongYatzi
                 if (string.IsNullOrEmpty(scoreBoard.GetScoreDown(3, 7).ToString()))
                 {
                     random3.Enabled = true;
-                    random3.Text = dice.ValidateRandom().ToString();
+                    random3.Text = dice.Sum().ToString();
                 }
                 if (string.IsNullOrEmpty(scoreBoard.GetScoreDown(3, 8).ToString()))
                 {
@@ -583,7 +583,7 @@ namespace LongYatzi
                     if (scoreBoard.GetActiveForceCell() == 13)
                     {
                         random4.Enabled = true;
-                        random4.Text = dice.ValidateRandom().ToString();
+                        random4.Text = dice.Sum().ToString();
                     }
                 }
                 if (string.IsNullOrEmpty(scoreBoard.GetScoreDown(4, 8).ToString()))
@@ -1026,7 +1026,7 @@ namespace LongYatzi
         {
             int _throw = 1;
             int _category = 7;
-            scoreBoard.StoreScoreDown(_throw, _category, dice.ValidateRandom());
+            scoreBoard.StoreScoreDown(_throw, _category, dice.Sum());
             NewTurn();
         }
 
@@ -1034,7 +1034,7 @@ namespace LongYatzi
         {
             int _throw = 2;
             int _category = 7;
-            scoreBoard.StoreScoreDown(_throw, _category, dice.ValidateRandom());
+            scoreBoard.StoreScoreDown(_throw, _category, dice.Sum());
             NewTurn();
         }
 
@@ -1042,7 +1042,7 @@ namespace LongYatzi
         {
             int _throw = 3;
             int _category = 7;
-            scoreBoard.StoreScoreDown(_throw, _category, dice.ValidateRandom());
+            scoreBoard.StoreScoreDown(_throw, _category, dice.Sum());
             NewTurn();
         }
 
@@ -1050,7 +1050,7 @@ namespace LongYatzi
         {
             int _throw = 4;
             int _category = 7;
-            scoreBoard.StoreScoreDown(_throw, _category, dice.ValidateRandom());
+            scoreBoard.StoreScoreDown(_throw, _category, dice.Sum());
             NewTurn();
         }
 

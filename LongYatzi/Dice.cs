@@ -174,14 +174,10 @@ namespace LongYatzi
         }
         internal int ValidateFullHouse()
         {
-            if (ValidateYatzy() > 0) return _diceList[0].EyeCount * 5;
-            if (ValidateFourSame()==0 && ValidateThreeSame()>0)
-            {
-                if (ValidateTwoPairs()>0) return ValidateRandom();
-            }
+            if (ValidateThreeSame()>0 && ValidateTwoPairs() > 0) return Sum();//if the hand is both three same, and two pairs, it must be full house, so return sum of all the dice
             return 0;
         }
-        internal int ValidateRandom()
+        internal int Sum()
         {
             return _diceList[0].EyeCount + _diceList[1].EyeCount + _diceList[2].EyeCount + _diceList[3].EyeCount + _diceList[4].EyeCount;
         }
