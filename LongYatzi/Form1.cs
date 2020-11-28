@@ -660,7 +660,10 @@ namespace LongYatzi
 
         private void twoPairs1_Click(object sender, EventArgs e)
         {
-
+            int _throw = 1;
+            int _category = 1;
+            scoreBoard.StoreScoreDown(_throw, _category, dice.ValidateTwoPairs());
+            NewTurn();
         }
 
         private void twoPairs2_Click(object sender, EventArgs e)
@@ -680,7 +683,10 @@ namespace LongYatzi
 
         private void threeSame1_Click(object sender, EventArgs e)
         {
-
+            int _throw = 1;
+            int _category = 2;
+            scoreBoard.StoreScoreDown(_throw, _category, dice.ValidateThreeSame());
+            NewTurn();
         }
 
         private void threeSame2_Click(object sender, EventArgs e)
@@ -700,7 +706,10 @@ namespace LongYatzi
 
         private void fourSame1_Click(object sender, EventArgs e)
         {
-
+            int _throw = 1;
+            int _category = 3;
+            scoreBoard.StoreScoreDown(_throw, _category, dice.ValidateFourSame());
+            NewTurn();
         }
 
         private void fourSame2_Click(object sender, EventArgs e)
@@ -720,7 +729,10 @@ namespace LongYatzi
 
         private void smallStraight1_Click(object sender, EventArgs e)
         {
-
+            int _throw = 1;
+            int _category = 4;
+            scoreBoard.StoreScoreDown(_throw, _category, dice.ValidateSmallStraight());
+            NewTurn();
         }
 
         private void smallStraight2_Click(object sender, EventArgs e)
@@ -740,7 +752,10 @@ namespace LongYatzi
 
         private void bigStraight1_Click(object sender, EventArgs e)
         {
-
+            int _throw = 1;
+            int _category = 5;
+            scoreBoard.StoreScoreDown(_throw, _category, dice.ValidateBigStraight());
+            NewTurn();
         }
 
         private void bigStraight2_Click(object sender, EventArgs e)
@@ -760,7 +775,10 @@ namespace LongYatzi
 
         private void fullHouse1_Click(object sender, EventArgs e)
         {
-
+            int _throw = 1;
+            int _category = 6;
+            scoreBoard.StoreScoreDown(_throw, _category, dice.ValidateFullHouse());
+            NewTurn();
         }
 
         private void fullHouse2_Click(object sender, EventArgs e)
@@ -780,7 +798,10 @@ namespace LongYatzi
 
         private void random1_Click(object sender, EventArgs e)
         {
-
+            int _throw = 1;
+            int _category = 7;
+            scoreBoard.StoreScoreDown(_throw, _category, dice.ValidateRandom());
+            NewTurn();
         }
 
         private void random2_Click(object sender, EventArgs e)
@@ -800,7 +821,10 @@ namespace LongYatzi
 
         private void yatzy1_Click(object sender, EventArgs e)
         {
-
+            int _throw = 1;
+            int _category = 8;
+            scoreBoard.StoreScoreDown(_throw, _category, dice.ValidateYatzy());
+            NewTurn();
         }
 
         private void yatzy2_Click(object sender, EventArgs e)

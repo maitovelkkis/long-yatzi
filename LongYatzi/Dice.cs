@@ -111,9 +111,9 @@ namespace LongYatzi
                 if (ValidateFourSame() == _eyecount * 4) return ValidateFourSame();//if there is 4 of the highest non checked number, there is 2 pairs of it which is same as four same
                 if(ValidatePair() == _eyecount * 2)//one pair found, try to find another
                 {
-                    int score = ValidatePair();
                     for(_eyecount--;_eyecount>0;_eyecount--)
                     {
+                        int score = ValidatePair();
                         foreach (Die die in _diceList)
                         {
                             if (die.EyeCount == _eyecount) score += _eyecount;

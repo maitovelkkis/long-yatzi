@@ -288,6 +288,17 @@ namespace LongYatziUnitTests
             Assert.AreEqual(8, dice.ValidateTwoPairs());
         }
         [TestMethod]
+        public void ValidateTwoPairs_8_3() //should return 8 
+        {
+            Dice dice = new Dice();
+            dice.AddDie(1);
+            dice.AddDie(1);
+            dice.AddDie(2);
+            dice.AddDie(3);
+            dice.AddDie(3);
+            Assert.AreEqual(8, dice.ValidateTwoPairs());
+        }
+        [TestMethod]
         public void ValidateTwoPairs_0_2() //should return 0
         {
             Dice dice = new Dice();
