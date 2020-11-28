@@ -376,7 +376,7 @@ namespace LongYatziUnitTests
             Assert.AreEqual(30, dice.ValidateFullHouse());
         }
         [TestMethod]
-        public void ValidateFullHouse_0() //should return 30
+        public void ValidateFullHouse_0() //should return 0
         {
             Dice dice = new Dice();
             dice.AddDie(6);
@@ -384,6 +384,17 @@ namespace LongYatziUnitTests
             dice.AddDie(2);
             dice.AddDie(3);
             dice.AddDie(3);
+            Assert.AreEqual(0, dice.ValidateFullHouse());
+        }
+        [TestMethod]
+        public void ValidateFullHouse_0_2() //should return 0
+        {
+            Dice dice = new Dice();
+            dice.AddDie(1);
+            dice.AddDie(4);
+            dice.AddDie(6);
+            dice.AddDie(4);
+            dice.AddDie(4);
             Assert.AreEqual(0, dice.ValidateFullHouse());
         }
     }

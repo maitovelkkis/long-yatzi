@@ -11,7 +11,7 @@ namespace LongYatzi
         /*0 = pairs
          *1 = 2 pairs
          *2 = 3 sames
-         *3 = full house
+         *3 = four same
          *4 = small straight
          *5 = big straight
          *6 = full house

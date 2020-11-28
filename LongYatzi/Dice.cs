@@ -191,14 +191,14 @@ namespace LongYatzi
                     {
                         if (die.EyeCount == _eyecount) score += _eyecount;
                     }
-                    if (score > ValidateThreeSame()) return score;
+                    if (score-ValidateThreeSame() == _eyecount*2) return score;
                 }
             }
             return 0;
         }
         internal int ValidateRandom()
         {
-            return _diceList[0].EyeCount + _diceList[1].EyeCount + _diceList[2].EyeCount + _diceList[3].EyeCount + _diceList[5].EyeCount;
+            return _diceList[0].EyeCount + _diceList[1].EyeCount + _diceList[2].EyeCount + _diceList[3].EyeCount + _diceList[4].EyeCount;
         }
         internal int ValidateYatzy()
         {

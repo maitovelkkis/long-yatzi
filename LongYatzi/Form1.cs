@@ -188,6 +188,34 @@ namespace LongYatzi
             twoPairs2.Text = scoreBoard.GetScoreDown(2, 1).ToString();
             twoPairs3.Text = scoreBoard.GetScoreDown(3, 1).ToString();
             twoPairs4.Text = scoreBoard.GetScoreDown(4, 1).ToString();
+            threeSame1.Text = scoreBoard.GetScoreDown(1, 2).ToString();
+            threeSame2.Text = scoreBoard.GetScoreDown(2, 2).ToString();
+            threeSame3.Text = scoreBoard.GetScoreDown(3, 2).ToString();
+            threeSame4.Text = scoreBoard.GetScoreDown(4, 2).ToString();
+            fourSame1.Text = scoreBoard.GetScoreDown(1, 3).ToString();
+            fourSame2.Text = scoreBoard.GetScoreDown(2, 3).ToString();
+            fourSame3.Text = scoreBoard.GetScoreDown(3, 3).ToString();
+            fourSame4.Text = scoreBoard.GetScoreDown(4, 3).ToString();
+            smallStraight1.Text = scoreBoard.GetScoreDown(1, 4).ToString();
+            smallStraight2.Text = scoreBoard.GetScoreDown(2, 4).ToString();
+            smallStraight3.Text = scoreBoard.GetScoreDown(3, 4).ToString();
+            smallStraight4.Text = scoreBoard.GetScoreDown(4, 4).ToString();
+            bigStraight1.Text = scoreBoard.GetScoreDown(1, 5).ToString();
+            bigStraight2.Text = scoreBoard.GetScoreDown(2, 5).ToString();
+            bigStraight3.Text = scoreBoard.GetScoreDown(3, 5).ToString();
+            bigStraight4.Text = scoreBoard.GetScoreDown(4, 5).ToString();
+            fullHouse1.Text = scoreBoard.GetScoreDown(1, 6).ToString();
+            fullHouse2.Text = scoreBoard.GetScoreDown(2, 6).ToString();
+            fullHouse3.Text = scoreBoard.GetScoreDown(3, 6).ToString();
+            fullHouse4.Text = scoreBoard.GetScoreDown(4, 6).ToString();
+            random1.Text = scoreBoard.GetScoreDown(1, 7).ToString();
+            random2.Text = scoreBoard.GetScoreDown(2, 7).ToString();
+            random3.Text = scoreBoard.GetScoreDown(3, 7).ToString();
+            random4.Text = scoreBoard.GetScoreDown(4, 7).ToString();
+            yatzy1.Text = scoreBoard.GetScoreDown(1,8).ToString();
+            yatzy2.Text = scoreBoard.GetScoreDown(2, 8).ToString();
+            yatzy3.Text = scoreBoard.GetScoreDown(3, 8).ToString();
+            yatzy4.Text = scoreBoard.GetScoreDown(4, 8).ToString();
             die1.Visible = true;
             die2.Visible = true;
             die3.Visible = true;
@@ -243,6 +271,51 @@ namespace LongYatzi
                 {
                     sixes1.Enabled = true;
                     sixes1.Text = dice.Validate(6).ToString();
+                }
+                if(string.IsNullOrEmpty(scoreBoard.GetScoreDown(1,0).ToString()))
+                {
+                    pair1.Enabled = true;
+                    pair1.Text = dice.ValidatePair().ToString();
+                }
+                if (string.IsNullOrEmpty(scoreBoard.GetScoreDown(1, 1).ToString()))
+                {
+                    twoPairs1.Enabled = true;
+                    twoPairs1.Text = dice.ValidateTwoPairs().ToString();
+                }
+                if (string.IsNullOrEmpty(scoreBoard.GetScoreDown(1, 2).ToString()))
+                {
+                    threeSame1.Enabled = true;
+                    threeSame1.Text = dice.ValidateThreeSame().ToString();
+                }
+                if (string.IsNullOrEmpty(scoreBoard.GetScoreDown(1,3).ToString()))
+                {
+                    fourSame1.Enabled = true;
+                    fourSame1.Text = dice.ValidateFourSame().ToString();
+                }
+                if (string.IsNullOrEmpty(scoreBoard.GetScoreDown(1, 4).ToString()))
+                {
+                    smallStraight1.Enabled = true;
+                    smallStraight1.Text = dice.ValidateSmallStraight().ToString();
+                }
+                if (string.IsNullOrEmpty(scoreBoard.GetScoreDown(1, 5).ToString()))
+                {
+                    bigStraight1.Enabled = true;
+                    bigStraight1.Text = dice.ValidateBigStraight().ToString();
+                }
+                if (string.IsNullOrEmpty(scoreBoard.GetScoreDown(1, 6).ToString()))
+                {
+                    fullHouse1.Enabled = true;
+                    fullHouse1.Text = dice.ValidateFullHouse().ToString();
+                }
+                if (string.IsNullOrEmpty(scoreBoard.GetScoreDown(1, 7).ToString()))
+                {
+                    random1.Enabled = true;
+                    random1.Text = dice.ValidateRandom().ToString();
+                }
+                if (string.IsNullOrEmpty(scoreBoard.GetScoreDown(1, 8).ToString()))
+                {
+                    yatzy1.Enabled = true;
+                    yatzy1.Text = dice.ValidateYatzy().ToString();
                 }
             }
             if (dice.GetThrow() <= 2 && dice.GetThrow() != 0)
