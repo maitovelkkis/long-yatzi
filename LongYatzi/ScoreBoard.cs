@@ -64,13 +64,13 @@ namespace LongYatzi
         }
         internal int? GetScoreDown(int _throw, int _category)
         {
-            if (_throw == 4 && _category+6 > forcedColumn.Count())
+            if (_throw == 4 && _category+7 > forcedColumn.Count())
             {
                 return null;
             }
             if (_throw == 4)
             {
-                return forcedColumn[_category+5];
+                return forcedColumn[_category+6];
             }
             else
             {
@@ -86,15 +86,15 @@ namespace LongYatzi
             }
             else if(_throw == 1)
             {
-                if (!UpperSectionFull(1))
+                if (!UpperSectionFull(1) || !LowerSectionFull(1))
                 {
                     return true;
                 }
-                if (!UpperSectionFull(2))
+                if (!UpperSectionFull(2) || !LowerSectionFull(2))
                 {
                     return true;
                 }
-                if (!UpperSectionFull(3))
+                if (!UpperSectionFull(3) || !LowerSectionFull(3))
                 {
                     return true;
                 }
@@ -108,6 +108,13 @@ namespace LongYatzi
                         return true;
                     }
                 }
+                for (int i = 0; i < 9; i++)
+                {
+                    if (lowerSection[2, i] == null)
+                    {
+                        return true;
+                    }
+                }
                 if (forcedColumn.Count < 15)
                 {
                     return true;
@@ -115,6 +122,7 @@ namespace LongYatzi
             }
             return false;
         }
+
         public int GetActiveForceCell()
         {
             return forcedColumn.Count();
@@ -141,6 +149,28 @@ namespace LongYatzi
             if(UpperSectionTotal(column)>=0)
             {
                 bonuses[column] = 50;
+            }
+            return true;
+        }
+
+        private bool LowerSectionFull(int column)
+        {
+            if (column == 3)
+            {
+                if (forcedColumn.Count < 15)//is not full
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                for (int i = 0; i < 9; i++)
+                {
+                    if (lowerSection[column, i] == null)
+                    {
+                        return false;
+                    }
+                }
             }
             return true;
         }
