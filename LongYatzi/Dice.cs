@@ -106,39 +106,56 @@ namespace LongYatzi
         }
         internal int ValidateTwoPairs()
         {
-            int score = 0;
-            int numberOfPairs = 0;
-            int tempScore = 0;
-
             for (int _eyecount = 6; _eyecount > 0; _eyecount--)
             {
-                List<Die> dicesWihSameEyeCount = _diceList.FindAll(x => x.EyeCount == _eyecount);
-
-                if (dicesWihSameEyeCount.Count() >= 4)
+                int score;
+                if (ValidateFourSame() == _eyecount * 4) return ValidateFourSame();//if there is 4 of the highest non checked number, there is 2 pairs of it which is same as four same
+                if(ValidatePair() == _eyecount * 2)//one pair found, try to find another
                 {
-                    score = 4 * _eyecount;
-                }
-                else if (dicesWihSameEyeCount.Count() >= 2)
-                {
-                    numberOfPairs++;
-                    tempScore += 2 * _eyecount;
+                    score = ValidatePair();
+                    for(_eyecount--;_eyecount>0;_eyecount--)
+                    {
+                        foreach (Die die in _diceList)
+                        {
+                            if (die.EyeCount == _eyecount) score += _eyecount;
+                        }
+                        if (score > ValidatePair()) return score;
+                    }
                 }
             }
-
-            if (numberOfPairs >= 2)
-            {
-                score = tempScore;
-            }
-
-            return score;
+            return 0;
         }
         internal int ValidateThreeSame()
         {
-            throw new NotImplementedException();
+            for (int _eyecount = 6; _eyecount > 0; _eyecount--)
+            {
+                int _score = 0;
+                foreach (Die die in _diceList)
+                {
+                    if (die.EyeCount == _eyecount)
+                    {
+                        _score += die.EyeCount;
+                        if (_score == _eyecount * 3) return _score;
+                    }
+                }
+            }
+            return 0;
         }
         internal int ValidateFourSame()
         {
-            throw new NotImplementedException();
+            for(int _eyecount = 6;_eyecount>0;_eyecount--)
+            {
+                int _score = 0;
+                foreach(Die die in _diceList)
+                {
+                    if (die.EyeCount == _eyecount)
+                    {
+                        _score += die.EyeCount;
+                        if (_score == _eyecount * 4) return _score;
+                    }
+                }
+            }
+            return 0;
         }
         internal int ValidateSmallStraight()
         {
@@ -164,7 +181,20 @@ namespace LongYatzi
         }
         internal int ValidateFullHouse()
         {
-            throw new NotImplementedException();
+            if (ValidateYatzy() > 0) return _diceList[0].EyeCount * 5;
+            if(ValidateThreeSame() > 0) //threesame found, trying to find a pair
+            {
+                int score = ValidateThreeSame();
+                for (int _eyecount = score/3-1; _eyecount > 0; _eyecount--)
+                {
+                    foreach (Die die in _diceList)
+                    {
+                        if (die.EyeCount == _eyecount) score += _eyecount;
+                    }
+                    if (score > ValidateThreeSame()) return score;
+                }
+            }
+            return 0;
         }
         internal int ValidateRandom()
         {
@@ -178,6 +208,7 @@ namespace LongYatzi
             }
             return 0;
         }
+
         #endregion
 
     }

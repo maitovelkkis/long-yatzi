@@ -199,6 +199,7 @@ namespace LongYatziUnitTests
             dice.AddDie(4);
             Assert.AreEqual(15, dice.ValidateSmallStraight());
         }
+        [TestMethod]
         public void ValidateBigStraight_20() //should return 15
         {
             Dice dice = new Dice();
@@ -209,15 +210,181 @@ namespace LongYatziUnitTests
             dice.AddDie(6);
             Assert.AreEqual(20, dice.ValidateBigStraight());
         }
+        [TestMethod]
         public void ValidateBigStraight_20_2() //should return 15
         {
             Dice dice = new Dice();
-            dice.AddDie(2);
+            dice.AddDie(6);
             dice.AddDie(3);
             dice.AddDie(4);
             dice.AddDie(5);
-            dice.AddDie(1);
+            dice.AddDie(2);
             Assert.AreEqual(20, dice.ValidateBigStraight());
+        }
+        [TestMethod]
+        public void ValidateFourSame_16() //should return 16 
+        {
+            Dice dice = new Dice();
+            dice.AddDie(4);
+            dice.AddDie(4);
+            dice.AddDie(4);
+            dice.AddDie(4);
+            dice.AddDie(6);
+            Assert.AreEqual(16, dice.ValidateFourSame());
+        }
+        [TestMethod]
+        public void ValidateFourSame_16_2() //should return 16 
+        {
+            Dice dice = new Dice();
+            dice.AddDie(4);
+            dice.AddDie(4);
+            dice.AddDie(4);
+            dice.AddDie(4);
+            dice.AddDie(4);
+            Assert.AreEqual(16, dice.ValidateFourSame());
+        }
+        [TestMethod]
+        public void ValidateFourSame_0() //should return 16 
+        {
+            Dice dice = new Dice();
+            dice.AddDie(4);
+            dice.AddDie(4);
+            dice.AddDie(4);
+            dice.AddDie(1);
+            dice.AddDie(6);
+            Assert.AreEqual(0, dice.ValidateFourSame());
+        }
+        [TestMethod]
+        public void ValidateFourSame_24() //should return 24
+        {
+            Dice dice = new Dice();
+            dice.AddDie(6);
+            dice.AddDie(6);
+            dice.AddDie(4);
+            dice.AddDie(6);
+            dice.AddDie(6);
+            Assert.AreEqual(24, dice.ValidateFourSame());
+        }
+        [TestMethod]
+        public void ValidateTwoPairs_24() //should return 24 
+        {
+            Dice dice = new Dice();
+            dice.AddDie(6);
+            dice.AddDie(6);
+            dice.AddDie(4);
+            dice.AddDie(6);
+            dice.AddDie(6);
+            Assert.AreEqual(24, dice.ValidateTwoPairs());
+        }
+        [TestMethod]
+        public void ValidateTwoPairs_8() //should return 8 
+        {
+            Dice dice = new Dice();
+            dice.AddDie(1);
+            dice.AddDie(1);
+            dice.AddDie(4);
+            dice.AddDie(3);
+            dice.AddDie(3);
+            Assert.AreEqual(8, dice.ValidateTwoPairs());
+        }
+        [TestMethod]
+        public void ValidateTwoPairs_0() //should return 0
+        {
+            Dice dice = new Dice();
+            dice.AddDie(1);
+            dice.AddDie(1);
+            dice.AddDie(4);
+            dice.AddDie(3);
+            dice.AddDie(1);
+            Assert.AreEqual(0, dice.ValidateTwoPairs());
+        }
+        [TestMethod]
+        public void ValidateThreeSame_0() //should return 0
+        {
+            Dice dice = new Dice();
+            dice.AddDie(1);
+            dice.AddDie(1);
+            dice.AddDie(4);
+            dice.AddDie(3);
+            dice.AddDie(2);
+            Assert.AreEqual(0, dice.ValidateThreeSame());
+        }
+        [TestMethod]
+        public void ValidateThreeSame_3() //should return 3
+        {
+            Dice dice = new Dice();
+            dice.AddDie(1);
+            dice.AddDie(1);
+            dice.AddDie(4);
+            dice.AddDie(3);
+            dice.AddDie(1);
+            Assert.AreEqual(3, dice.ValidateThreeSame());
+        }
+        [TestMethod]
+        public void ValidateThreeSame_18() //should return 18
+        {
+            Dice dice = new Dice();
+            dice.AddDie(6);
+            dice.AddDie(6);
+            dice.AddDie(4);
+            dice.AddDie(3);
+            dice.AddDie(6);
+            Assert.AreEqual(18, dice.ValidateThreeSame());
+        }
+        [TestMethod]
+        public void ValidateThreeSame_18_2() //should return 18
+        {
+            Dice dice = new Dice();
+            dice.AddDie(6);
+            dice.AddDie(6);
+            dice.AddDie(4);
+            dice.AddDie(6);
+            dice.AddDie(6);
+            Assert.AreEqual(18, dice.ValidateThreeSame());
+        }
+        [TestMethod]
+        public void ValidateFullHouse_20() //should return 20
+        {
+            Dice dice = new Dice();
+            dice.AddDie(6);
+            dice.AddDie(6);
+            dice.AddDie(1);
+            dice.AddDie(6);
+            dice.AddDie(1);
+            Assert.AreEqual(20, dice.ValidateFullHouse());
+        }
+        [TestMethod]
+        public void ValidateFullHouse_5() //should return 5
+        {
+            Dice dice = new Dice();
+            dice.AddDie(1);
+            dice.AddDie(1);
+            dice.AddDie(1);
+            dice.AddDie(1);
+            dice.AddDie(1);
+            Assert.AreEqual(5, dice.ValidateFullHouse());
+        }
+        [TestMethod]
+        public void ValidateFullHouse_30() //should return 30
+        {
+            Dice dice = new Dice();
+            dice.AddDie(6);
+            dice.AddDie(6);
+            dice.AddDie(6);
+            dice.AddDie(6);
+            dice.AddDie(6);
+            Assert.AreEqual(30, dice.ValidateFullHouse());
+        }
+        [TestMethod]
+        public void ValidateFullHouse_0() //should return 30
+        {
+            Dice dice = new Dice();
+            dice.AddDie(6);
+            dice.AddDie(6);
+            dice.AddDie(2);
+            dice.AddDie(3);
+            dice.AddDie(3);
+            Assert.AreEqual(0, dice.ValidateFullHouse());
         }
     }
 }
