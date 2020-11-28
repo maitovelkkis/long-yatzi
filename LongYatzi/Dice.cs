@@ -118,8 +118,9 @@ namespace LongYatzi
                         {
                             if (die.EyeCount == _eyecount) score += _eyecount;
                         }
-                        if (score > ValidatePair()) return score;
+                        if (score - ValidatePair() == _eyecount*2) return score;
                     }
+                    return 0;
                 }
             }
             return 0; 
