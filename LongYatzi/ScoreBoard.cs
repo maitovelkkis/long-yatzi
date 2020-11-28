@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace LongYatzi
@@ -7,8 +8,6 @@ namespace LongYatzi
     {
         int?[,] upperSection = new int?[3, 6]; //x = throw 1-3, y = dice eye count - 1
         int?[,] lowerSection = new int?[3, 9]; //x = throw 1-3, y = category of points
-        int[] bonuses = new int[4];
-        List<int> forcedColumn = new List<int>();
         /*0 = pairs
          *1 = 2 pairs
          *2 = 3 sames
@@ -19,6 +18,8 @@ namespace LongYatzi
          *7 = random
          *8 = yatzy
          */
+        int[] bonuses = new int[4];
+        List<int> forcedColumn = new List<int>();
         public void StoreScoreUp(int _throw,int _eyecount,int _score)
         {
             _eyecount--;
@@ -30,6 +31,18 @@ namespace LongYatzi
             {
                 _throw--;
                 upperSection[_throw, _eyecount] = _score;
+            }
+        }
+        internal void StoreScoreDown(int _throw, int _category, int _score)
+        {
+            if (_throw == 4)
+            {
+                forcedColumn.Add(_score);
+            }
+            else
+            {
+                _throw--;
+                lowerSection[_throw, _category] = _score;
             }
         }
         public int? GetScoreUp(int _throw, int _eyecount)
@@ -47,6 +60,22 @@ namespace LongYatzi
             {
                 _throw--;
                 return upperSection[_throw, _eyecount];
+            }
+        }
+        internal int? GetScoreDown(int _throw, int _category)
+        {
+            if (_throw == 4 && _category+6 > forcedColumn.Count())
+            {
+                return null;
+            }
+            if (_throw == 4)
+            {
+                return forcedColumn[_category+6];
+            }
+            else
+            {
+                _throw--;
+                return lowerSection[_throw, _category];
             }
         }
         public bool RoomForThrow(int _throw)

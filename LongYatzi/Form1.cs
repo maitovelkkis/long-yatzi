@@ -89,7 +89,46 @@ namespace LongYatzi
             sixes2.Enabled = false;
             sixes3.Enabled = false;
             sixes4.Enabled = false;
-            if(scoreBoard.UpperSectionFull(0))
+            pair1.Enabled = false;
+            pair2.Enabled = false;
+            pair3.Enabled = false;
+            pair4.Enabled = false;
+            twoPairs1.Enabled = false;
+            twoPairs2.Enabled = false;
+            twoPairs3.Enabled = false;
+            twoPairs4.Enabled = false;
+            threeSame1.Enabled = false;
+            threeSame2.Enabled = false;
+            threeSame3.Enabled = false;
+            threeSame4.Enabled = false;
+            fourSame1.Enabled = false;
+            fourSame2.Enabled = false;
+            fourSame3.Enabled = false;
+            fourSame4.Enabled = false;
+            smallStraight1.Enabled = false;
+            smallStraight2.Enabled = false;
+            smallStraight3.Enabled = false;
+            smallStraight4.Enabled = false;
+            bigStraight1.Enabled = false;
+            bigStraight2.Enabled = false;
+            bigStraight3.Enabled = false;
+            bigStraight4.Enabled = false;
+            fullHouse1.Enabled = false;
+            fullHouse2.Enabled = false;
+            fullHouse3.Enabled = false;
+            fullHouse4.Enabled = false;
+            random1.Enabled = false;
+            random2.Enabled = false;
+            random3.Enabled = false;
+            random4.Enabled = false;
+            yatzy1.Enabled = false;
+            yatzy2.Enabled = false;
+            yatzy3.Enabled = false;
+            yatzy4.Enabled = false;
+
+
+
+            if (scoreBoard.UpperSectionFull(0))
             {
                 uppertotal1.Visible = true;
                 uppertotal1.Text = scoreBoard.UpperSectionTotal(0).ToString();
@@ -141,6 +180,14 @@ namespace LongYatzi
             sixes2.Text = scoreBoard.GetScoreUp(2, 6).ToString();
             sixes3.Text = scoreBoard.GetScoreUp(3, 6).ToString();
             sixes4.Text = scoreBoard.GetScoreUp(4, 6).ToString();
+            pair1.Text = scoreBoard.GetScoreDown(1, 0).ToString();
+            pair2.Text = scoreBoard.GetScoreDown(2, 0).ToString();
+            pair3.Text = scoreBoard.GetScoreDown(3, 0).ToString();
+            pair4.Text = scoreBoard.GetScoreDown(4, 0).ToString();
+            twoPairs1.Text = scoreBoard.GetScoreDown(1, 1).ToString();
+            twoPairs2.Text = scoreBoard.GetScoreDown(2, 1).ToString();
+            twoPairs3.Text = scoreBoard.GetScoreDown(3, 1).ToString();
+            twoPairs4.Text = scoreBoard.GetScoreDown(4, 1).ToString();
             die1.Visible = true;
             die2.Visible = true;
             die3.Visible = true;
@@ -513,6 +560,189 @@ namespace LongYatzi
             int _eyecount = 6;
             scoreBoard.StoreScoreUp(_throw, _eyecount, dice.Validate(_eyecount));
             NewTurn();
+        }
+
+        private void pair1_Click(object sender, EventArgs e)
+        {
+            int _throw = 1;
+            int _category = 0;
+            scoreBoard.StoreScoreDown(_throw, _category, dice.ValidatePair());
+            NewTurn();
+        }
+
+        private void pair2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pair3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pair4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void twoPairs1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void twoPairs2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void twoPairs3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void twoPairs4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void threeSame1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void threeSame2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void threeSame3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void threeSame4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fourSame1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fourSame2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fourSame3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fourSame4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void smallStraight1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void smallStraight2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void smallStraight3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void smallStraight4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bigStraight1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bigStraight2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bigStraight3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bigStraight4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fullHouse1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fullHouse2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fullHouse3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fullHouse4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void random1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void random2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void random3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void random4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void yatzy1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void yatzy2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void yatzy3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void yatzy4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
