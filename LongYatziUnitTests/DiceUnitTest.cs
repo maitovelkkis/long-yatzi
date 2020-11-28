@@ -41,6 +41,54 @@ namespace LongYatziUnitTests
             dice.AddDie(5);
             Assert.AreEqual(0, dice.ValidatePair());
         }
+
+        //Added Test Methods for Validating Two Pairs
+        [TestMethod]
+        public void ValidateTwoPairs_0_0() //should return 0 as no pair was found
+        {
+            Dice dice = new Dice();
+            dice.AddDie(1);
+            dice.AddDie(2);
+            dice.AddDie(3);
+            dice.AddDie(4);
+            dice.AddDie(5);
+            Assert.AreEqual(0, dice.ValidateTwoPairs());
+        }
+        [TestMethod]
+        public void ValidateTwoPairs_0() //should return 0 as only one pair is found
+        {
+            Dice dice = new Dice();
+            dice.AddDie(1);
+            dice.AddDie(2);
+            dice.AddDie(3);
+            dice.AddDie(5);
+            dice.AddDie(5);
+            Assert.AreEqual(0, dice.ValidateTwoPairs());
+        }
+        [TestMethod]
+        public void ValidateTwoPairs_10() //should return 10 (2*2 + 2*3)
+        {
+            Dice dice = new Dice();
+            dice.AddDie(2);
+            dice.AddDie(2);
+            dice.AddDie(3);
+            dice.AddDie(3);
+            dice.AddDie(5);
+            Assert.AreEqual(10, dice.ValidateTwoPairs());
+        }
+        [TestMethod]
+        public void ValidateTwoPairs_8() //should return 8 cause 4*2
+        {
+            Dice dice = new Dice();
+            dice.AddDie(2);
+            dice.AddDie(2);
+            dice.AddDie(2);
+            dice.AddDie(2);
+            dice.AddDie(5);
+            Assert.AreEqual(8, dice.ValidateTwoPairs());
+        }
+        //End Test Methods for Validating Two Pairs
+
         [TestMethod]
         public void ValidateYatzy_50() //should return 50 as all are same
         {

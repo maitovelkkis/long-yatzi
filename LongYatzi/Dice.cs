@@ -17,14 +17,14 @@ namespace LongYatzi
         public void ThrowDice()
         {
             Random rand = new Random();
-            if(_throw == 3)
+            if (_throw == 3)
             {
                 ResetHeld();
                 _throw = 0;
             }
-            foreach(Die die in _diceList)
+            foreach (Die die in _diceList)
             {
-                if(!die.Held)
+                if (!die.Held)
                 {
                     die.EyeCount = rand.Next(1, 7);
                 }
@@ -49,7 +49,7 @@ namespace LongYatzi
         }
         public void Initialize()
         {
-            for(int i = 0; i < _diceAmount;i++)
+            for (int i = 0; i < _diceAmount; i++)
             {
                 _diceList.Add(new Die(1));
             }
@@ -60,7 +60,7 @@ namespace LongYatzi
         }
         public void ResetHeld()
         {
-            foreach(Die die in _diceList)
+            foreach (Die die in _diceList)
             {
                 die.Held = false;
             }
@@ -71,7 +71,7 @@ namespace LongYatzi
         }
         public bool HandContains(int _eyecount)
         {
-            foreach(Die die in _diceList)
+            foreach (Die die in _diceList)
             {
                 if (die.EyeCount == _eyecount)
                     return true;
@@ -93,10 +93,10 @@ namespace LongYatzi
         }
         internal int ValidatePair()
         {
-            for(int _eyecount = 6;_eyecount>0;_eyecount--)
+            for (int _eyecount = 6; _eyecount > 0; _eyecount--)
             {
                 int score = 0;
-                foreach(Die die in _diceList)
+                foreach (Die die in _diceList)
                 {
                     if (die.EyeCount == _eyecount) score += _eyecount;
                 }
@@ -106,7 +106,31 @@ namespace LongYatzi
         }
         internal int ValidateTwoPairs()
         {
-            throw new NotImplementedException();
+            int score = 0;
+            int numberOfPairs = 0;
+            int tempScore = 0;
+
+            for (int _eyecount = 6; _eyecount > 0; _eyecount--)
+            {
+                List<Die> dicesWihSameEyeCount = _diceList.FindAll(x => x.EyeCount == _eyecount);
+
+                if (dicesWihSameEyeCount.Count() >= 4)
+                {
+                    score = 4 * _eyecount;
+                }
+                else if (dicesWihSameEyeCount.Count() >= 2)
+                {
+                    numberOfPairs++;
+                    tempScore += 2 * _eyecount;
+                }
+            }
+
+            if (numberOfPairs >= 2)
+            {
+                score = tempScore;
+            }
+
+            return score;
         }
         internal int ValidateThreeSame()
         {
@@ -118,9 +142,9 @@ namespace LongYatzi
         }
         internal int ValidateSmallStraight()
         {
-            for(int i = 1;i<6;i++)
+            for (int i = 1; i < 6; i++)
             {
-                if(!HandContains(i))
+                if (!HandContains(i))
                 {
                     return 0;
                 }
@@ -148,12 +172,13 @@ namespace LongYatzi
         }
         internal int ValidateYatzy()
         {
-            if(_diceList[0].EyeCount == _diceList[1].EyeCount && _diceList[0].EyeCount == _diceList[2].EyeCount && _diceList[0].EyeCount == _diceList[3].EyeCount && _diceList[0].EyeCount == _diceList[4].EyeCount)
+            if (_diceList[0].EyeCount == _diceList[1].EyeCount && _diceList[0].EyeCount == _diceList[2].EyeCount && _diceList[0].EyeCount == _diceList[3].EyeCount && _diceList[0].EyeCount == _diceList[4].EyeCount)
             {
                 return 50;
             }
             return 0;
         }
         #endregion
+
     }
 }
