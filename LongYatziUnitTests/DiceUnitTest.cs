@@ -87,6 +87,50 @@ namespace LongYatziUnitTests
             dice.AddDie(5);
             Assert.AreEqual(8, dice.ValidateTwoPairs());
         }
+        [TestMethod]
+        public void ValidateTwoPairs_24() //should return 24 
+        {
+            Dice dice = new Dice();
+            dice.AddDie(6);
+            dice.AddDie(6);
+            dice.AddDie(4);
+            dice.AddDie(6);
+            dice.AddDie(6);
+            Assert.AreEqual(24, dice.ValidateTwoPairs());
+        }
+        [TestMethod]
+        public void ValidateTwoPairs_8_2() //should return 8 
+        {
+            Dice dice = new Dice();
+            dice.AddDie(1);
+            dice.AddDie(1);
+            dice.AddDie(4);
+            dice.AddDie(3);
+            dice.AddDie(3);
+            Assert.AreEqual(8, dice.ValidateTwoPairs());
+        }
+        [TestMethod]
+        public void ValidateTwoPairs_8_3() //should return 8 
+        {
+            Dice dice = new Dice();
+            dice.AddDie(1);
+            dice.AddDie(1);
+            dice.AddDie(2);
+            dice.AddDie(3);
+            dice.AddDie(3);
+            Assert.AreEqual(8, dice.ValidateTwoPairs());
+        }
+        [TestMethod]
+        public void ValidateTwoPairs_0_2() //should return 0
+        {
+            Dice dice = new Dice();
+            dice.AddDie(1);
+            dice.AddDie(1);
+            dice.AddDie(4);
+            dice.AddDie(3);
+            dice.AddDie(1);
+            Assert.AreEqual(0, dice.ValidateTwoPairs());
+        }
         //End Test Methods for Validating Two Pairs
 
         [TestMethod]
@@ -265,50 +309,7 @@ namespace LongYatziUnitTests
             dice.AddDie(6);
             Assert.AreEqual(24, dice.ValidateFourSame());
         }
-        [TestMethod]
-        public void ValidateTwoPairs_24() //should return 24 
-        {
-            Dice dice = new Dice();
-            dice.AddDie(6);
-            dice.AddDie(6);
-            dice.AddDie(4);
-            dice.AddDie(6);
-            dice.AddDie(6);
-            Assert.AreEqual(24, dice.ValidateTwoPairs());
-        }
-        [TestMethod]
-        public void ValidateTwoPairs_8_2() //should return 8 
-        {
-            Dice dice = new Dice();
-            dice.AddDie(1);
-            dice.AddDie(1);
-            dice.AddDie(4);
-            dice.AddDie(3);
-            dice.AddDie(3);
-            Assert.AreEqual(8, dice.ValidateTwoPairs());
-        }
-        [TestMethod]
-        public void ValidateTwoPairs_8_3() //should return 8 
-        {
-            Dice dice = new Dice();
-            dice.AddDie(1);
-            dice.AddDie(1);
-            dice.AddDie(2);
-            dice.AddDie(3);
-            dice.AddDie(3);
-            Assert.AreEqual(8, dice.ValidateTwoPairs());
-        }
-        [TestMethod]
-        public void ValidateTwoPairs_0_2() //should return 0
-        {
-            Dice dice = new Dice();
-            dice.AddDie(1);
-            dice.AddDie(1);
-            dice.AddDie(4);
-            dice.AddDie(3);
-            dice.AddDie(1);
-            Assert.AreEqual(0, dice.ValidateTwoPairs());
-        }
+
         [TestMethod]
         public void ValidateThreeSame_0() //should return 0
         {

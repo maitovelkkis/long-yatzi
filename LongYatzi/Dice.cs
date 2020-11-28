@@ -106,24 +106,17 @@ namespace LongYatzi
         }
         internal int ValidateTwoPairs()
         {
-            for (int _eyecount = 6; _eyecount > 0; _eyecount--)
+            if (ValidateFourSame() > 0) return ValidateFourSame();//if there is 4 of the highest non checked number, there is 2 pairs of it which is same as four same
+            for(int _eyecount = ValidatePair() / 2-1; _eyecount>0;_eyecount--)
             {
-                if (ValidateFourSame() == _eyecount * 4) return ValidateFourSame();//if there is 4 of the highest non checked number, there is 2 pairs of it which is same as four same
-                if(ValidatePair() == _eyecount * 2)//one pair found, try to find another
+                int score = ValidatePair();
+                foreach (Die die in _diceList)
                 {
-                    for(_eyecount--;_eyecount>0;_eyecount--)
-                    {
-                        int score = ValidatePair();
-                        foreach (Die die in _diceList)
-                        {
-                            if (die.EyeCount == _eyecount) score += _eyecount;
-                        }
-                        if (score - ValidatePair() == _eyecount*2) return score;
-                    }
-                    return 0;
+                    if (die.EyeCount == _eyecount) score += _eyecount;
                 }
+                if (score - ValidatePair() == _eyecount*2) return score;
             }
-            return 0; 
+            return 0;
         }
         internal int ValidateThreeSame()
         {

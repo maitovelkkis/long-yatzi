@@ -350,6 +350,36 @@ namespace LongYatzi
                     sixes2.Enabled = true;
                     sixes2.Text = dice.Validate(6).ToString();
                 }
+                if (string.IsNullOrEmpty(scoreBoard.GetScoreDown(2, 0).ToString()))
+                {
+                    pair2.Enabled = true;
+                    pair2.Text = dice.ValidatePair().ToString();
+                }
+                if (string.IsNullOrEmpty(scoreBoard.GetScoreDown(2,1).ToString()))
+                {
+                    twoPairs2.Enabled = true;
+                    twoPairs2.Text = dice.ValidateTwoPairs().ToString();
+                }
+                if (string.IsNullOrEmpty(scoreBoard.GetScoreDown(2, 2).ToString()))
+                {
+                    threeSame2.Enabled = true;
+                    threeSame2.Text = dice.ValidateThreeSame().ToString();
+                }
+                if (string.IsNullOrEmpty(scoreBoard.GetScoreDown(2, 3).ToString()))
+                {
+                    fourSame2.Enabled = true;
+                    fourSame2.Text = dice.ValidateFourSame().ToString();
+                }
+                if (string.IsNullOrEmpty(scoreBoard.GetScoreDown(2, 4).ToString()))
+                {
+                    smallStraight2.Enabled = true;
+                    smallStraight2.Text = dice.ValidateSmallStraight().ToString();
+                }
+                if (string.IsNullOrEmpty(scoreBoard.GetScoreDown(2, 5).ToString()))
+                {
+                    bigStraight2.Enabled = true;
+                    bigStraight2.Text = dice.ValidateSmallStraight().ToString();
+                }
             }
             if (dice.GetThrow() <= 3 && dice.GetThrow() != 0)
             {
