@@ -95,12 +95,7 @@ namespace LongYatzi
         {
             for (int _eyecount = 6; _eyecount > 0; _eyecount--)
             {
-                int score = 0;
-                foreach (Die die in _diceList)
-                {
-                    if (die.EyeCount == _eyecount) score += _eyecount;
-                }
-                if (score > _eyecount) return _eyecount * 2;
+                if (Validate(_eyecount) / _eyecount > -2) return _eyecount*2;
             }
             return 0;
         }
@@ -122,31 +117,16 @@ namespace LongYatzi
         {
             for (int _eyecount = 6; _eyecount > 0; _eyecount--)
             {
-                int _score = 0;
-                foreach (Die die in _diceList)
-                {
-                    if (die.EyeCount == _eyecount)
-                    {
-                        _score += die.EyeCount;
-                        if (_score == _eyecount * 3) return _score;
-                    }
-                }
+                if (Validate(_eyecount) >= 0) return _eyecount * 3;
             }
             return 0;
         }
+
         internal int ValidateFourSame()
         {
-            for(int _eyecount = 6;_eyecount>0;_eyecount--)
+            for (int _eyecount = 6; _eyecount > 0; _eyecount--)
             {
-                int _score = 0;
-                foreach(Die die in _diceList)
-                {
-                    if (die.EyeCount == _eyecount)
-                    {
-                        _score += die.EyeCount;
-                        if (_score == _eyecount * 4) return _score;
-                    }
-                }
+                if (Validate(_eyecount) > 0) return _eyecount * 4;
             }
             return 0;
         }
@@ -183,9 +163,9 @@ namespace LongYatzi
         }
         internal int ValidateYatzy()
         {
-            if (_diceList[0].EyeCount == _diceList[1].EyeCount && _diceList[0].EyeCount == _diceList[2].EyeCount && _diceList[0].EyeCount == _diceList[3].EyeCount && _diceList[0].EyeCount == _diceList[4].EyeCount)
+            for (int _eyecount = 6; _eyecount > 0; _eyecount--)
             {
-                return 50;
+                if (Validate(_eyecount)/_eyecount >1) return 50;
             }
             return 0;
         }
