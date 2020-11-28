@@ -106,7 +106,24 @@ namespace LongYatzi
         }
         internal int ValidateTwoPairs()
         {
-            throw new NotImplementedException();
+            for (int _eyecount = 6; _eyecount > 0; _eyecount--)
+            {
+                int score;
+                if (ValidateFourSame() == _eyecount * 4) return ValidateFourSame();//if there is 4 of the highest non checked number, there is 2 pairs of it which is same as four same
+                if(ValidatePair() == _eyecount * 2)//one pair found, try to find another
+                {
+                    score = ValidatePair();
+                    for(_eyecount--;_eyecount>0;_eyecount--)
+                    {
+                        foreach (Die die in _diceList)
+                        {
+                            if (die.EyeCount == _eyecount) score += _eyecount;
+                        }
+                        if (score > ValidatePair()) return score;
+                    }
+                }
+            }
+            return 0;
         }
         internal int ValidateThreeSame()
         {
@@ -114,7 +131,19 @@ namespace LongYatzi
         }
         internal int ValidateFourSame()
         {
-            throw new NotImplementedException();
+            for(int i = 6;i>0;i--)
+            {
+                int _score = 0;
+                foreach(Die die in _diceList)
+                {
+                    if (die.EyeCount == i)
+                    {
+                        _score += die.EyeCount;
+                        if (_score == i * 4) return _score;
+                    }
+                }
+            }
+            return 0;
         }
         internal int ValidateSmallStraight()
         {
@@ -154,6 +183,7 @@ namespace LongYatzi
             }
             return 0;
         }
+
         #endregion
     }
 }
