@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 
+[assembly: InternalsVisibleToAttribute("LongYatziUnitTests")]
 namespace LongYatzi
 {
     class ScoreBoard
     {
-        int?[,] upperSection = new int?[3, 6]; //x = throw 1-3, y = dice eye count - 1
-        int?[,] lowerSection = new int?[3, 9]; //x = throw 1-3, y = category of points
+        internal int?[,] upperSection = new int?[3, 6]; //x = throw 1-3, y = dice eye count - 1
+        internal int?[,] lowerSection = new int?[3, 9]; //x = throw 1-3, y = category of points
         /*0 = pairs
          *1 = 2 pairs
          *2 = 3 sames
@@ -18,7 +20,7 @@ namespace LongYatzi
          *7 = random
          *8 = yatzy
          */
-        int[] bonuses = new int[4];
+        int?[] bonuses = new int?[4];
         List<int> forcedColumn = new List<int>();
         public void StoreScoreUp(int _throw,int _eyecount,int _score)
         {
@@ -181,16 +183,46 @@ namespace LongYatzi
             {
                 if (column == 3)
                 {
+                    if(forcedColumn.Count>i)
                     total += forcedColumn[i];
                 }
                 else
                 {
-                    total += upperSection[column, i];
+                    if(upperSection[column,i]!=null) total += upperSection[column, i];
                 }
             }
             return total;
         }
-        public int GetBonus(int column)
+        public int? LowerSectionTotal(int column)
+        {
+            int? total = 0;
+            for (int i = 0; i < 9; i++)
+            {
+                if (column == 3)
+                {
+                    if (forcedColumn.Count > i+6)
+                        total += forcedColumn[i+6];
+                }
+                else
+                {
+                    if (lowerSection[column, i] != null) total += lowerSection[column, i];
+                }
+            }
+            return total;
+        }
+        public int? Total(int column)
+        {
+            int? total = 0;
+            if (UpperSectionTotal(column) != null) total += UpperSectionTotal(column);
+            if (bonuses[column] != null) total += bonuses[column];
+            if (LowerSectionTotal(column) != null) total += LowerSectionTotal(column);
+            return total;
+        }
+        public int? Total()
+        {
+            return Total(0) + Total(1) + Total(2) + Total(3);
+        }
+        public int? GetBonus(int column)
         {
             return bonuses[column];
         }

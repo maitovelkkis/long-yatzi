@@ -79,7 +79,7 @@ namespace LongYatzi
             return false;
         }
         #region Dice Validators
-        internal int Validate(int _eyecount) //validate category from upper section
+        internal int Validate(int _eyecount) //validate category from upper section.
         {
             int score = -3;
             foreach (Die die in _diceList)

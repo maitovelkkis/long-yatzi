@@ -137,6 +137,7 @@ namespace LongYatzi
             this.total2 = new System.Windows.Forms.Label();
             this.total3 = new System.Windows.Forms.Label();
             this.total4 = new System.Windows.Forms.Label();
+            this.totaltotal = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // throw1
@@ -1104,11 +1105,21 @@ namespace LongYatzi
             this.total4.TabIndex = 106;
             this.total4.Text = "total";
             // 
+            // totaltotal
+            // 
+            this.totaltotal.AutoSize = true;
+            this.totaltotal.Location = new System.Drawing.Point(337, 615);
+            this.totaltotal.Name = "totaltotal";
+            this.totaltotal.Size = new System.Drawing.Size(35, 13);
+            this.totaltotal.TabIndex = 107;
+            this.totaltotal.Text = "label1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(395, 657);
+            this.Controls.Add(this.totaltotal);
             this.Controls.Add(this.total4);
             this.Controls.Add(this.total3);
             this.Controls.Add(this.total2);
@@ -1343,6 +1354,7 @@ namespace LongYatzi
         private System.Windows.Forms.Label total2;
         private System.Windows.Forms.Label total3;
         private System.Windows.Forms.Label total4;
+        private System.Windows.Forms.Label totaltotal;
     }
 }
 

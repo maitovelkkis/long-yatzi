@@ -125,8 +125,11 @@ namespace LongYatzi
             yatzy2.Enabled = false;
             yatzy3.Enabled = false;
             yatzy4.Enabled = false;
-
-
+            total1.Text = scoreBoard.Total(0).ToString();
+            total2.Text = scoreBoard.Total(1).ToString();
+            total3.Text = scoreBoard.Total(2).ToString();
+            total4.Text = scoreBoard.Total(3).ToString();
+            totaltotal.Text = scoreBoard.Total().ToString();
 
             if (scoreBoard.UpperSectionFull(0))
             {
