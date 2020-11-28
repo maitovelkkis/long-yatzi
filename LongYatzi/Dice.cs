@@ -175,17 +175,9 @@ namespace LongYatzi
         internal int ValidateFullHouse()
         {
             if (ValidateYatzy() > 0) return _diceList[0].EyeCount * 5;
-            if(ValidateThreeSame() > 0) //threesame found, trying to find a pair
+            if (ValidateFourSame()==0 && ValidateThreeSame()>0)
             {
-                int score = ValidateThreeSame();
-                for (int _eyecount = score/3-1; _eyecount > 0; _eyecount--)
-                {
-                    foreach (Die die in _diceList)
-                    {
-                        if (die.EyeCount == _eyecount) score += _eyecount;
-                    }
-                    if (score-ValidateThreeSame() == _eyecount*2) return score;
-                }
+                if (ValidateTwoPairs()>0) return ValidateRandom();
             }
             return 0;
         }
