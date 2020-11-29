@@ -81,21 +81,13 @@ namespace LongYatzi
         #region Dice Validators
         internal int Validate(int _eyecount) //validate category from upper section.
         {
-            int score = -3;
-            foreach (Die die in _diceList)
-            {
-                if (die.EyeCount == _eyecount)
-                {
-                    score++;
-                }
-            }
-            return score * _eyecount;
+            return ((-3 + Count(_eyecount)) * _eyecount); //if you get 3 same, you get 0 points. Less if you have less and more if you have more...
         }
         internal int ValidatePair()
         {
             for (int _eyecount = 6; _eyecount > 0; _eyecount--)
             {
-                if (Validate(_eyecount) / _eyecount > -2) return _eyecount*2;
+                if (Count(_eyecount)>=2) return _eyecount*2;
             }
             return 0;
         }
@@ -117,7 +109,7 @@ namespace LongYatzi
         {
             for (int _eyecount = 6; _eyecount > 0; _eyecount--)
             {
-                if (Validate(_eyecount) >= 0) return _eyecount * 3;
+                if (Count(_eyecount) >= 3) return _eyecount * 3;
             }
             return 0;
         }
@@ -126,7 +118,7 @@ namespace LongYatzi
         {
             for (int _eyecount = 6; _eyecount > 0; _eyecount--)
             {
-                if (Validate(_eyecount) > 0) return _eyecount * 4;
+                if (Count(_eyecount) >= 4) return _eyecount * 4;
             }
             return 0;
         }
@@ -153,11 +145,14 @@ namespace LongYatzi
         {
             for (int _eyecount = 6; _eyecount > 0; _eyecount--)
             {
-                if (Validate(_eyecount)/_eyecount >1) return 50;
+                if (Count(_eyecount) == 5) return 50;
             }
             return 0;
         }
-
+        internal int Count(int _eyecount)
+        {
+            return _diceList.Count(die => die.EyeCount == _eyecount);
+        }
         #endregion
 
     }
