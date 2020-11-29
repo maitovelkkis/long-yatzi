@@ -147,7 +147,7 @@ namespace LongYatzi
         }
         internal int Sum()
         {
-            return _diceList[0].EyeCount + _diceList[1].EyeCount + _diceList[2].EyeCount + _diceList[3].EyeCount + _diceList[4].EyeCount;
+            return _diceList.Sum(die => die.EyeCount);
         }
         internal int ValidateYatzy()
         {

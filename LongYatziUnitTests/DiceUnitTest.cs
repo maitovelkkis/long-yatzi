@@ -431,5 +431,16 @@ namespace LongYatziUnitTests
             dice.AddDie(4);
             Assert.AreEqual(0, dice.ValidateFullHouse());
         }
+        [TestMethod]
+        public void ValidateSum() //should return 15
+        {
+            Dice dice = new Dice();
+            dice.AddDie(1);
+            dice.AddDie(2);
+            dice.AddDie(3);
+            dice.AddDie(4);
+            dice.AddDie(5);
+            Assert.AreEqual(15, dice.Sum());
+        }
     }
 }
