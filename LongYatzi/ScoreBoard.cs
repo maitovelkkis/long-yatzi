@@ -8,8 +8,8 @@ namespace LongYatzi
 {
     class ScoreBoard
     {
-        internal int?[,] upperSection = new int?[3, 6]; //x = throw 1-3, y = dice eye count - 1
-        internal int?[,] lowerSection = new int?[3, 9]; //x = throw 1-3, y = category of points
+        internal int?[,] upperSection = new int?[4, 6]; //x = throw 1-3, y = dice eye count - 1
+        internal int?[,] lowerSection = new int?[4, 9]; //x = throw 1-3, y = category of points
         /*0 = pairs
          *1 = 2 pairs
          *2 = 3 sames
@@ -21,64 +21,29 @@ namespace LongYatzi
          *8 = yatzy
          */
         int?[] bonuses = new int?[4];
-        List<int> forcedColumn = new List<int>();
         public void StoreScoreUp(int _throw,int _eyecount,int _score)
         {
             _eyecount--;
-            if (_throw == 4)
-            {
-                forcedColumn.Add(_score);
-            }
-            else
-            {
-                _throw--;
-                upperSection[_throw, _eyecount] = _score;
-            }
+            _throw--;
+            upperSection[_throw, _eyecount] = _score;
+            
         }
         internal void StoreScoreDown(int _throw, int _category, int _score)
         {
-            if (_throw == 4)
-            {
-                forcedColumn.Add(_score);
-            }
-            else
-            {
+
                 _throw--;
                 lowerSection[_throw, _category] = _score;
-            }
         }
         public int? GetScoreUp(int _throw, int _eyecount)
         {
-            if(_throw == 4 && _eyecount > forcedColumn.Count())
-            {
-                return null;
-            }
             _eyecount--;
-            if (_throw == 4)
-            {
-                return forcedColumn[_eyecount];
-            }
-            else
-            {
-                _throw--;
-                return upperSection[_throw, _eyecount];
-            }
+            _throw--;
+            return upperSection[_throw, _eyecount];
         }
         internal int? GetScoreDown(int _throw, int _category)
         {
-            if (_throw == 4 && _category+7 > forcedColumn.Count())
-            {
-                return null;
-            }
-            if (_throw == 4)
-            {
-                return forcedColumn[_category+6];
-            }
-            else
-            {
-                _throw--;
-                return lowerSection[_throw, _category];
-            }
+            _throw--;
+            return lowerSection[_throw, _category];
         }
         public bool RoomForThrow(int _throw)
         {
@@ -117,35 +82,44 @@ namespace LongYatzi
                         return true;
                     }
                 }
-                if (forcedColumn.Count < 15)
+                for (int i = 0; i < 6; i++)
                 {
-                    return true;
+                    if (upperSection[3, i] == null)
+                    {
+                        return true;
+                    }
                 }
+                for (int i = 0; i < 9; i++)
+                {
+                    if (lowerSection[3, i] == null)
+                    {
+                        return true;
+                    }
+                }
+
             }
             return false;
         }
 
         public int GetActiveForceCell()
         {
-            return forcedColumn.Count();
+            for(int i = 1;i<7;i++)
+            {
+                if (GetScoreUp(4, i) == null) return i-1;
+            }
+            for (int i = 0; i < 10; i++)
+            {
+                if (GetScoreDown(4, i) == null) return i+6;
+            }
+            return 15;
         }
         public bool UpperSectionFull(int column)
         {
-            if (column == 3)
+            for (int i = 0; i < 6; i++)
             {
-                if (forcedColumn.Count < 6)//is not full
+                if (upperSection[column, i] == null)
                 {
                     return false;
-                }
-            }
-            else
-            {
-                for (int i = 0; i < 6; i++)
-                {
-                    if (upperSection[column, i] == null)
-                    {
-                        return false;
-                    }
                 }
             }
             if(UpperSectionTotal(column)>=0)
@@ -157,21 +131,11 @@ namespace LongYatzi
 
         private bool LowerSectionFull(int column)
         {
-            if (column == 3)
+            for (int i = 0; i < 9; i++)
             {
-                if (forcedColumn.Count < 15)//is not full
+                if (lowerSection[column, i] == null)
                 {
                     return false;
-                }
-            }
-            else
-            {
-                for (int i = 0; i < 9; i++)
-                {
-                    if (lowerSection[column, i] == null)
-                    {
-                        return false;
-                    }
                 }
             }
             return true;
@@ -181,15 +145,7 @@ namespace LongYatzi
             int? total = 0;
             for(int i = 0;i<6;i++)
             {
-                if (column == 3)
-                {
-                    if(forcedColumn.Count>i)
-                    total += forcedColumn[i];
-                }
-                else
-                {
-                    if(upperSection[column,i]!=null) total += upperSection[column, i];
-                }
+                if(upperSection[column,i]!=null) total += upperSection[column, i];
             }
             return total;
         }
@@ -198,15 +154,8 @@ namespace LongYatzi
             int? total = 0;
             for (int i = 0; i < 9; i++)
             {
-                if (column == 3)
-                {
-                    if (forcedColumn.Count > i+6)
-                        total += forcedColumn[i+6];
-                }
-                else
-                {
-                    if (lowerSection[column, i] != null) total += lowerSection[column, i];
-                }
+
+                if (lowerSection[column, i] != null) total += lowerSection[column, i];
             }
             return total;
         }
