@@ -134,7 +134,7 @@ namespace LongYatzi
         }
         internal int ValidateFullHouse()
         {
-            if (ValidateThreeSame()>0 && ValidateTwoPairs() > 0) return Sum();//if the hand is both three same, and two pairs, it must be full house, so return sum of all the dice
+            if (ValidateThreeSame()>0 && ValidateTwoPairs() > 0 && (ValidateFourSame() ==0 || ValidateYatzy() > 0)) return Sum();//if the hand is both three same, and two pairs, it must be full house, so return sum of all the dice (if it's not four sames but is yatzy)
             return 0;
         }
         internal int Sum()
