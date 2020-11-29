@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
+﻿using System.Runtime.CompilerServices;
 
 [assembly: InternalsVisibleToAttribute("LongYatziUnitTests")]
 namespace LongYatzi
@@ -21,7 +18,7 @@ namespace LongYatzi
          *8 = yatzy
          */
         int?[] bonuses = new int?[4];
-        public void StoreScoreUp(int _throw,int _eyecount,int _score)
+        internal void StoreScoreUp(int _throw,int _eyecount,int _score)
         {
             _eyecount--;
             _throw--;
@@ -34,7 +31,7 @@ namespace LongYatzi
                 _throw--;
                 lowerSection[_throw, _category] = _score;
         }
-        public int? GetScoreUp(int _throw, int _eyecount)
+        internal int? GetScoreUp(int _throw, int _eyecount)
         {
             _eyecount--;
             _throw--;
@@ -45,18 +42,14 @@ namespace LongYatzi
             _throw--;
             return lowerSection[_throw, _category];
         }
-        public bool RoomForThrow(int _throw)
+        internal bool RoomForThrow(int _throw)
         {
             if(_throw==0)
             {
                 return true;
             }
-            else if(_throw == 1)
+            if (_throw == 2 || _throw == 1)
             {
-                if (!UpperSectionFull(1) || !LowerSectionFull(1))
-                {
-                    return true;
-                }
                 if (!UpperSectionFull(2) || !LowerSectionFull(2))
                 {
                     return true;
@@ -66,37 +59,12 @@ namespace LongYatzi
                     return true;
                 }
             }
-            else if (_throw == 2)
+            if (_throw == 1)
             {
-                for (int i = 0; i < 6; i++)
+                if (!UpperSectionFull(1) || !LowerSectionFull(1))
                 {
-                    if (upperSection[2, i] == null)
-                    {
-                        return true;
-                    }
+                    return true;
                 }
-                for (int i = 0; i < 9; i++)
-                {
-                    if (lowerSection[2, i] == null)
-                    {
-                        return true;
-                    }
-                }
-                for (int i = 0; i < 6; i++)
-                {
-                    if (upperSection[3, i] == null)
-                    {
-                        return true;
-                    }
-                }
-                for (int i = 0; i < 9; i++)
-                {
-                    if (lowerSection[3, i] == null)
-                    {
-                        return true;
-                    }
-                }
-
             }
             return false;
         }

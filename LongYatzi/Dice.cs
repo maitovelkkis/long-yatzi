@@ -132,25 +132,13 @@ namespace LongYatzi
         }
         internal int ValidateSmallStraight()
         {
-            for (int i = 1; i < 6; i++)
-            {
-                if (!HandContains(i))
-                {
-                    return 0;
-                }
-            }
-            return 15;
+            if (!HandContains(6) && ValidatePair() == 0) return 15;
+            return 0;
         }
         internal int ValidateBigStraight()
         {
-            for (int i = 2; i < 7; i++)
-            {
-                if (!HandContains(i))
-                {
-                    return 0;
-                }
-            }
-            return 20;
+            if (!HandContains(1) && ValidatePair()==0) return 20;
+            return 0;
         }
         internal int ValidateFullHouse()
         {
