@@ -1,4 +1,5 @@
-﻿using System.Runtime.CompilerServices;
+﻿using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 
 [assembly: InternalsVisibleToAttribute("LongYatziUnitTests")]
 namespace LongYatzi
@@ -69,17 +70,17 @@ namespace LongYatzi
             return false;
         }
 
-        public int GetActiveForceCell()
+        public List<int> GetActiveForceCells()
         {
             for(int i = 1;i<7;i++)
             {
-                if (GetScoreUp(4, i) == null) return i-1;
+                if (GetScoreUp(4, i) == null) return new List<int>{ i - 1};
             }
             for (int i = 0; i < 10; i++)
             {
-                if (GetScoreDown(4, i) == null) return i+6;
+                if (GetScoreDown(4, i) == null) return new List<int> { i + 6 };
             }
-            return 15;
+            return new List<int> { 15 };
         }
         public bool UpperSectionFull(int column)
         {
