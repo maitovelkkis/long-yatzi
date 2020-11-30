@@ -76,11 +76,14 @@ namespace LongYatzi
             {
                 if (GetScoreUp(4, i) == null) return new List<int>{ i - 1};
             }
-            for (int i = 0; i < 10; i++)
+            int listcount = 6;
+            for (int i = 0; i < 9; i++)
             {
-                if (GetScoreDown(4, i) == null) return new List<int> { i + 6 };
+                if (GetScoreDown(4, i) != null) listcount++;
             }
-            return new List<int> { 15 };
+            if (listcount == 10 && GetScoreDown(4, 4) == null) return new List<int> { 10,11};//this line and line below are so that small straight and big straight can be played in any order
+            if (listcount == 11 && GetScoreDown(4, 4) == null) return new List<int> { 10 };
+            return new List<int> { listcount };
         }
         public bool UpperSectionFull(int column)
         {
