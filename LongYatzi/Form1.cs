@@ -479,7 +479,7 @@ namespace LongYatzi
                 }
                 if (string.IsNullOrEmpty(scoreBoard.GetScoreUp(4, 1).ToString()))
                 {
-                    if (scoreBoard.GetActiveForceCell() == 0)
+                    if (scoreBoard.GetActiveForceCells().Contains(0))
                     {
                         ones4.Enabled = true;
                         ones4.Text = dice.Validate(1).ToString();
@@ -487,7 +487,7 @@ namespace LongYatzi
                 }
                 if (string.IsNullOrEmpty(scoreBoard.GetScoreUp(4, 2).ToString()))
                 {
-                    if (scoreBoard.GetActiveForceCell() == 1)
+                    if (scoreBoard.GetActiveForceCells().Contains(1))
                     {
                         twos4.Enabled = true;
                         twos4.Text = dice.Validate(2).ToString();
@@ -495,7 +495,7 @@ namespace LongYatzi
                 }
                 if (string.IsNullOrEmpty(scoreBoard.GetScoreUp(4, 3).ToString()))
                 {
-                    if (scoreBoard.GetActiveForceCell() == 2)
+                    if (scoreBoard.GetActiveForceCells().Contains(2))
                     {
                         threes4.Enabled = true;
                         threes4.Text = dice.Validate(3).ToString();
@@ -503,7 +503,7 @@ namespace LongYatzi
                 }
                 if (string.IsNullOrEmpty(scoreBoard.GetScoreUp(4, 4).ToString()))
                 {
-                    if (scoreBoard.GetActiveForceCell() == 3)
+                    if (scoreBoard.GetActiveForceCells().Contains(3))
                     {
                         fours4.Enabled = true;
                         fours4.Text = dice.Validate(4).ToString();
@@ -511,7 +511,7 @@ namespace LongYatzi
                 }
                 if (string.IsNullOrEmpty(scoreBoard.GetScoreUp(4, 5).ToString()))
                 {
-                    if (scoreBoard.GetActiveForceCell() == 4)
+                    if (scoreBoard.GetActiveForceCells().Contains(4))
                     {
                         fives4.Enabled = true;
                         fives4.Text = dice.Validate(5).ToString();
@@ -519,7 +519,7 @@ namespace LongYatzi
                 }
                 if (string.IsNullOrEmpty(scoreBoard.GetScoreUp(4, 6).ToString()))
                 {
-                    if (scoreBoard.GetActiveForceCell() == 5)
+                    if (scoreBoard.GetActiveForceCells().Contains(5))
                     {
                         sixes4.Enabled = true;
                         sixes4.Text = dice.Validate(6).ToString();
@@ -527,7 +527,7 @@ namespace LongYatzi
                 }
                 if (string.IsNullOrEmpty(scoreBoard.GetScoreDown(4, 0).ToString()))
                 {
-                    if (scoreBoard.GetActiveForceCell() == 6)
+                    if (scoreBoard.GetActiveForceCells().Contains(6))
                     {
                         pair4.Enabled = true;
                         pair4.Text = dice.ValidatePair().ToString();
@@ -535,7 +535,7 @@ namespace LongYatzi
                 }
                 if (string.IsNullOrEmpty(scoreBoard.GetScoreDown(4, 1).ToString()))
                 {
-                    if (scoreBoard.GetActiveForceCell() == 7)
+                    if (scoreBoard.GetActiveForceCells().Contains(7))
                     {
                         twoPairs4.Enabled = true;
                         twoPairs4.Text = dice.ValidateTwoPairs().ToString();
@@ -543,7 +543,7 @@ namespace LongYatzi
                 }
                 if (string.IsNullOrEmpty(scoreBoard.GetScoreDown(4, 2).ToString()))
                 {
-                    if (scoreBoard.GetActiveForceCell() == 8)
+                    if (scoreBoard.GetActiveForceCells().Contains(8))
                     {
                         threeSame4.Enabled = true;
                         threeSame4.Text = dice.ValidateThreeSame().ToString();
@@ -551,7 +551,7 @@ namespace LongYatzi
                 }
                 if (string.IsNullOrEmpty(scoreBoard.GetScoreDown(4, 3).ToString()))
                 {
-                    if (scoreBoard.GetActiveForceCell() == 9)
+                    if (scoreBoard.GetActiveForceCells().Contains(9))
                     {
                         fourSame4.Enabled = true;
                         fourSame4.Text = dice.ValidateFourSame().ToString();
@@ -559,7 +559,7 @@ namespace LongYatzi
                 }
                 if (string.IsNullOrEmpty(scoreBoard.GetScoreDown(4, 4).ToString()))
                 {
-                    if (scoreBoard.GetActiveForceCell() == 10)
+                    if (scoreBoard.GetActiveForceCells().Contains(10))
                     {
                         smallStraight4.Enabled = true;
                         smallStraight4.Text = dice.ValidateSmallStraight().ToString();
@@ -567,7 +567,7 @@ namespace LongYatzi
                 }
                 if (string.IsNullOrEmpty(scoreBoard.GetScoreDown(4, 5).ToString()))
                 {
-                    if (scoreBoard.GetActiveForceCell() == 11)
+                    if (scoreBoard.GetActiveForceCells().Contains(11))
                     {
                         bigStraight4.Enabled = true;
                         bigStraight4.Text = dice.ValidateBigStraight().ToString();
@@ -575,7 +575,7 @@ namespace LongYatzi
                 }
                 if (string.IsNullOrEmpty(scoreBoard.GetScoreDown(4, 6).ToString()))
                 {
-                    if (scoreBoard.GetActiveForceCell() == 12)
+                    if (scoreBoard.GetActiveForceCells().Contains(12))
                     {
                         fullHouse4.Enabled = true;
                         fullHouse4.Text = dice.ValidateFullHouse().ToString();
@@ -583,7 +583,7 @@ namespace LongYatzi
                 }
                 if (string.IsNullOrEmpty(scoreBoard.GetScoreDown(4, 7).ToString()))
                 {
-                    if (scoreBoard.GetActiveForceCell() == 13)
+                    if (scoreBoard.GetActiveForceCells().Contains(13))
                     {
                         random4.Enabled = true;
                         random4.Text = dice.Sum().ToString();
@@ -591,7 +591,7 @@ namespace LongYatzi
                 }
                 if (string.IsNullOrEmpty(scoreBoard.GetScoreDown(4, 8).ToString()))
                 {
-                    if (scoreBoard.GetActiveForceCell() == 14)
+                    if (scoreBoard.GetActiveForceCells().Contains(14))
                     {
                         yatzy4.Enabled = true;
                         yatzy4.Text = dice.ValidateYatzy().ToString();

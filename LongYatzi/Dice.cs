@@ -143,10 +143,8 @@ namespace LongYatzi
         }
         internal int ValidateYatzy()
         {
-            for (int _eyecount = 6; _eyecount > 0; _eyecount--)
-            {
-                if (Count(_eyecount) == 5) return 50;
-            }
+
+            if (Count(_diceList[0].EyeCount) == 5) return 50;
             return 0;
         }
         internal int Count(int _eyecount)
