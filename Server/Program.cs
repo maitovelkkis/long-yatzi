@@ -1,12 +1,16 @@
 ﻿using System;
+using LongYatzi;
 
 namespace Server
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            Console.WriteLine("Hello World!");
+            Dice dice = new Dice();
+            dice.Initialize();
+            Console.Clear();
+            foreach (Die die in dice.ReadDice()) Console.WriteLine(die.GetEyeCount());
         }
     }
 }

@@ -9,11 +9,17 @@ using System.Runtime.CompilerServices;
 namespace LongYatzi
 {
 
-    internal class Dice
+    public class Dice
     {
         private int _diceAmount = 5;
         private int _throw = 0;
         List<Die> _diceList = new List<Die>();
+        public void Initialize()
+        {
+            _diceList = new List<Die>();
+            for (int i = 0; i < _diceAmount; i++) AddDie(1);
+            ThrowDice();
+        }
         public void ThrowDice()
         {
             Random rand = new Random();
@@ -31,7 +37,7 @@ namespace LongYatzi
             }
             _throw++;
         }
-        public void AddDie(int _eyecount)
+        internal void AddDie(int _eyecount)
         {
             _diceList.Add(new Die(_eyecount));
         }
@@ -46,13 +52,6 @@ namespace LongYatzi
         public void ThrowCount(int throwcount)
         {
             _throw = throwcount;
-        }
-        public void Initialize()
-        {
-            for (int i = 0; i < _diceAmount; i++)
-            {
-                _diceList.Add(new Die(1));
-            }
         }
         public void Hold(int die)
         {

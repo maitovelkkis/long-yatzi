@@ -6,14 +6,18 @@ using System.Threading.Tasks;
 
 namespace LongYatzi
 {
-    class Die
+    public class Die
     {
         public bool Held = false;
-        public int EyeCount;
+        internal int EyeCount;
 
         public Die(int EyeCount)
         {
             this.EyeCount = EyeCount;
+        }
+        public int GetEyeCount()
+        {
+            return this.EyeCount;
         }
     }
 }
