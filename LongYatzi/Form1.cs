@@ -477,6 +477,7 @@ namespace LongYatzi
                     yatzy3.Enabled = true;
                     yatzy3.Text = dice.ValidateYatzy().ToString();
                 }
+                //force row
                 if (string.IsNullOrEmpty(scoreBoard.GetScoreUp(4, 1).ToString()))
                 {
                     if (scoreBoard.GetActiveForceCells().Contains(0))

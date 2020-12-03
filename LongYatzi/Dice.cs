@@ -12,7 +12,7 @@ namespace LongYatzi
     public class Dice
     {
         private int _diceAmount = 5;
-        private int _throw = 0;
+        private int _throw = -1;
         List<Die> _diceList = new List<Die>();
         public void Initialize()
         {
@@ -37,6 +37,7 @@ namespace LongYatzi
             }
             _throw++;
         }
+
         internal void AddDie(int _eyecount)
         {
             _diceList.Add(new Die(_eyecount));
