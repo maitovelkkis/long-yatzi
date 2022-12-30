@@ -301,10 +301,30 @@ namespace LongYatzi
                     smallStraight1.Enabled = true;
                     smallStraight1.Text = dice.ValidateSmallStraight().ToString();
                 }
+                else if (string.IsNullOrEmpty(scoreBoard.GetScoreDown(2, 4).ToString()))
+                {
+                    smallStraight2.Enabled = true;
+                    smallStraight2.Text = dice.ValidateSmallStraight().ToString();
+                }
+                else if (string.IsNullOrEmpty(scoreBoard.GetScoreDown(3, 4).ToString()))
+                {
+                    smallStraight3.Enabled = true;
+                    smallStraight3.Text = dice.ValidateSmallStraight().ToString();
+                }
                 if (string.IsNullOrEmpty(scoreBoard.GetScoreDown(1, 5).ToString()))
                 {
                     bigStraight1.Enabled = true;
                     bigStraight1.Text = dice.ValidateBigStraight().ToString();
+                }
+                else if (string.IsNullOrEmpty(scoreBoard.GetScoreDown(2, 5).ToString()))
+                {
+                    bigStraight2.Enabled = true;
+                    bigStraight2.Text = dice.ValidateBigStraight().ToString();
+                }
+                else if (string.IsNullOrEmpty(scoreBoard.GetScoreDown(3, 5).ToString()))
+                {
+                    bigStraight3.Enabled = true;
+                    bigStraight3.Text = dice.ValidateBigStraight().ToString();
                 }
                 if (string.IsNullOrEmpty(scoreBoard.GetScoreDown(1, 6).ToString()))
                 {
@@ -322,7 +342,7 @@ namespace LongYatzi
                     yatzy1.Text = dice.ValidateYatzy().ToString();
                 }
             }
-            if (dice.GetThrow() <= 2 && dice.GetThrow() != 0)
+            if (dice.GetThrow() == 2)
             {
                 if (string.IsNullOrEmpty(scoreBoard.GetScoreUp(2, 1).ToString()))
                 {
@@ -379,10 +399,20 @@ namespace LongYatzi
                     smallStraight2.Enabled = true;
                     smallStraight2.Text = dice.ValidateSmallStraight().ToString();
                 }
+                else if (string.IsNullOrEmpty(scoreBoard.GetScoreDown(3, 4).ToString()))
+                {
+                    smallStraight3.Enabled = true;
+                    smallStraight3.Text = dice.ValidateSmallStraight().ToString();
+                }
                 if (string.IsNullOrEmpty(scoreBoard.GetScoreDown(2, 5).ToString()))
                 {
                     bigStraight2.Enabled = true;
                     bigStraight2.Text = dice.ValidateBigStraight().ToString();
+                }
+                else if (string.IsNullOrEmpty(scoreBoard.GetScoreDown(3, 5).ToString()))
+                {
+                    bigStraight3.Enabled = true;
+                    bigStraight3.Text = dice.ValidateBigStraight().ToString();
                 }
                 if (string.IsNullOrEmpty(scoreBoard.GetScoreDown(2, 6).ToString()))
                 {
@@ -400,7 +430,7 @@ namespace LongYatzi
                     yatzy2.Text = dice.ValidateYatzy().ToString();
                 }
             }
-            if (dice.GetThrow() <= 3 && dice.GetThrow() != 0)
+            if (dice.GetThrow() == 3)
             {
                 if (string.IsNullOrEmpty(scoreBoard.GetScoreUp(3, 1).ToString()))
                 {
